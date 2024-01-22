@@ -5,35 +5,3 @@
     font-style: normal;
     font-display: swap;
 }
-
-@font-face {
-    font-family: '2Dumb';
-    src: url('../fonts/Dumb.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Blokletters';
-    src: url('../fonts/Blokletters-Potlood.ttf') format('truetype');
-    font-weight: light;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Blokletters';
-    src: url('../fonts/Blokletters-Balpen.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Blokletters';
-    src: url('../fonts/Blokletters-Viltstift.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}

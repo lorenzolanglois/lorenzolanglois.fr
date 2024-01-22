@@ -21,12 +21,14 @@ html::before {
   }
 
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     padding: 0 100px;
 }
 
 h1 {
-    font-family: "Blokletters", cursive;
     font-weight: bold;
     font-size: 60px;
     text-decoration: underline;
@@ -40,8 +42,14 @@ h2 {
     text-align: left;
 }
 
-h1, h2, a, p {
+h2, a, p {
     cursor: auto;
+}
+
+.flex-left {
+    display: flex;
+    flex-direction: row;
+    width: -webkit-fill-available;
 }
 
 #drawable {
@@ -66,4 +74,14 @@ p {
 .text-small {
     font-size: 15px;
     font-weight: lighter;
+}
+
+@media (max-width:725px) {
+    h1 {
+        font-size: 35px;
+    }
+
+    .flex-left {
+        width: auto;
+    }
 }

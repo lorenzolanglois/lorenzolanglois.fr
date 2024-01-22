@@ -5,8 +5,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap&text=enroil.usatmBvzgfPjIyc(p)" rel="stylesheet"/>
   <link rel="stylesheet" href="css/font.css"/>
-  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/style.css"/>
   <title>Lorenzo Langlois</title>
 </head>
@@ -14,7 +14,9 @@
 <body>
   <canvas id="drawable"></canvas>
   <h1><a href="https://lorenzolanglois.fr">Bienvenue sur lorenzolanglois.fr</a></h1>
-  <h2>Projets</h2>
+  <div class="flex-left">
+      <h2>Projets</h2>
+  </div>
   <div id="main-card">
     <p>Il n'y a rien ici... <a class="text-small">(pour le moment)</a></p>
   </div>
@@ -44,7 +46,7 @@
       });
 
       document.body.addEventListener("mousedown", function (e) {
-          if (e.target.tagName != "H1" && e.target.tagName != "H2" && e.target.tagName != "P" && e.target.tagName != "A") {
+          if (e.target.tagName != "H2" && e.target.tagName != "P" && e.target.tagName != "A") {
               isPainting = true;
               document.documentElement.style.userSelect = "none";
           }
