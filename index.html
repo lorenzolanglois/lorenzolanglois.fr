@@ -4,6 +4,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="css/font.css"/>
   <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/style.css"/>
@@ -11,6 +12,7 @@
 </head>
 
 <body>
+  <canvas id="drawable"></canvas>
   <h1><wired-link href="https://lorenzolanglois.fr">Bienvenue sur lorenzolanglois.fr</wired-link></h1>
   <h2>Projets</h2>
   <wired-card id="main-card">
@@ -19,6 +21,48 @@
   <script type="module">
     import {WiredLink} from 'https://lorenzolanglois.fr/node_modules/wired-elements/lib/wired-link.js';
     import {WiredCard} from 'https://lorenzolanglois.fr/node_modules/wired-elements/lib/wired-card.js';
+  </script>
+  <script>
+      "use strict";
+
+      const canvas = document.getElementById("drawable");
+      const context = canvas.getContext("2d", { willReadFrequently: true });
+      var isPainting = false;
+
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      context.lineWidth = 5;
+      context.lineCap = "round";
+      context.strokeStyle = "yellow";
+
+      window.addEventListener("resize", function () {
+          if (window.innerHeight > canvas.height || window.innerWidth > canvas.width) {
+              const background = context.getImageData(0, 0, canvas.width, canvas.height)
+              canvas.width = window.innerWidth;
+              canvas.height = window.innerHeight;
+              context.putImageData(background, 0, 0)
+              context.lineWidth = 5;
+              context.lineCap = "round";
+              context.strokeStyle = "yellow";
+          }
+      });
+
+      document.body.addEventListener("mousedown", function (e) {
+          isPainting = true;
+      });
+
+      document.body.addEventListener("mouseup", function () {
+          isPainting = false;
+          context.beginPath();
+      });
+
+      document.body.addEventListener("mousemove", function (e) {
+          if (!isPainting) return;
+          context.lineTo(e.clientX, e.clientY);
+          context.stroke();
+          context.beginPath();
+          context.moveTo(e.clientX, e.clientY);
+      });
   </script>
 </body>
 
