@@ -4,7 +4,7 @@
 }
 
 html {
-    cursor: url("../assets/crayon.svg");
+    cursor: url("../assets/crayon.svg"), auto;
 }
 
 html::before {
@@ -32,12 +32,16 @@ h1 {
     text-decoration: underline;
 }
 
-wired-link {
-    --wired-link-decoration-color: black;
+a:link, a:visited {
+    color: black;
 }
 
 h2 {
     text-align: left;
+}
+
+h1, h2, a, p {
+    cursor: auto;
 }
 
 #drawable {
