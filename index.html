@@ -3,16 +3,20 @@
 <html lang="fr">
 
 <head>
+  <meta charset="UTF-8">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBTEF1J70Q"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    if (window.location.hostname != "localhost") {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    gtag('config', 'G-HBTEF1J70Q');
+      gtag('config', 'G-HBTEF1J70Q');
+    } else {
+      console.log("Currently in localhost, Google Analytics is disabled");
+    }
   </script>
-  <meta charset="UTF-8">
   <meta name="description" content="Découvrez mon CV et les différents projets que j'ai pu réaliser au cours de mes études et en dehors">
   <meta name="keywords" content="Lorenzo Langlois, CV, Epitech, parcours, linkedin, réseaux">
   <meta property="og:url" content="http://lorenzolanglois.fr" />
@@ -30,67 +34,60 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#161616">
-  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap&text=enroil.usatmBvzgfPjIyc(p)" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/font.css"/>
   <link rel="stylesheet" href="css/style.css"/>
   <title>Lorenzo Langlois - Développeur</title>
 </head>
 
 <body>
+  <alert id="alert">Site toujours en cours de construction</alert>
   <canvas id="drawable"></canvas>
   <h1><a href="https://lorenzolanglois.fr">Bienvenue sur lorenzolanglois.fr</a></h1>
   <div class="flex-left">
-      <h2>Projets</h2>
+      <img class="border" src="assets/lorenzo.webp" style="height: 340px;" alt="Photo de Lorenzo Langlois">
+    <div class="flex-down">
+      <h3>Lorenzo Langlois</h3>
+      <div class="flex-left social">
+        <a href="https://linkedin.com/in/lorenzo-langlois/" target="_blank"><img src="assets/social/linkedin.svg"></a>
+      </div>
+      <p>Étudiant de troisième année à epitech</p>
+      <a href="#cv"><button class="border">Voir le cv</button></a>
+    </div>
   </div>
-  <div id="main-card">
-    <p>Il n'y a rien ici... <a class="text-small">(pour le moment)</a></p>
+  <h2 id="projetsRealises">Quelques projets réalisés</h2>
+  <h3 id="rpg">Jeu vidéo de type RPG</h3>
+  <div class="flex-left category">
+      <div class="flex-down" style="width: 75%;">
+        <h3>Trailer</h3>
+        <video src="assets/myrpg/myrpg_trailer.mp4" class="border" preload="metadata" poster="assets/myrpg/myrpg_trailer_thumbnail.webp" title="Trailer du projet myrpg" onloadstart="this.volume=0.2" controls></video>
+      </div>
+      <div class="flex-down">
+        <p>Groupe de 4</p>
+        <p>Réalisé en première année</p>
+        <div class="flex-left technologies">
+            <img src="assets/technologies/c.svg" alt="Langage C" title="Langage C"></img>
+            <img src="assets/technologies/sfml.svg" alt="Librarie SFML" title="Librarie SFML"></img>
+        </div>
+      </div>
   </div>
-  <script>
-      "use strict";
-
-      const canvas = document.getElementById("drawable");
-      const context = canvas.getContext("2d", { willReadFrequently: true });
-      var isPainting = false;
-
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      context.lineWidth = 5;
-      context.lineCap = "round";
-      context.strokeStyle = "yellow";
-
-      window.addEventListener("resize", function () {
-          if (window.innerHeight > canvas.height || window.innerWidth > canvas.width) {
-              const background = context.getImageData(0, 0, canvas.width, canvas.height)
-              canvas.width = window.innerWidth;
-              canvas.height = window.innerHeight;
-              context.putImageData(background, 0, 0)
-              context.lineWidth = 5;
-              context.lineCap = "round";
-              context.strokeStyle = "yellow";
-          }
-      });
-
-      document.body.addEventListener("mousedown", function (e) {
-          if (e.target.tagName != "H2" && e.target.tagName != "P" && e.target.tagName != "A") {
-              isPainting = true;
-              document.documentElement.style.userSelect = "none";
-          }
-      });
-
-      document.body.addEventListener("mouseup", function () {
-          isPainting = false;
-          context.beginPath();
-          document.documentElement.style.userSelect = "auto";
-      });
-
-      document.body.addEventListener("mousemove", function (e) {
-          if (!isPainting) return;
-          context.lineTo(e.clientX, e.clientY);
-          context.stroke();
-          context.beginPath();
-          context.moveTo(e.clientX, e.clientY);
-      });
-  </script>
+  <h3 id="raytracing">Raytracing</h3>
+  <div class="flex-left category">
+    <div class="flex-down" style="width: 75%;">
+      <h3>Photo</h3>
+      <img style="width: 50%;" src="assets/raytracing/raytracing1.png">
+    </div>
+    <div class="flex-down">
+      <p>Groupe de 4</p>
+      <p>Réalisé en deuxième année</p>
+      <div class="flex-left technologies">
+          <img src="assets/technologies/cpp.svg" alt="Langage C++" title="Langage C++"></img>
+      </div>
+    </div>
+</div>
+  <h2 id="cv">CV</h2>
+  <a href="/assets/CV_Lorenzo_Langlois.pdf" download><button class="border">Télécharger le cv</button></a>
+  <script src="js/index.js"></script>
 </body>
 
 </html>

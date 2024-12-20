@@ -1,0 +1,7 @@
+User-agent: *
+
+Disallow: /assets/lorenzo.webp
+
+Allow: /
+
+Sitemap: https://lorenzolanglois.fr/sitemap.xml
