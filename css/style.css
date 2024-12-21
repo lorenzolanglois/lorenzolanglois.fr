@@ -176,6 +176,10 @@ video {
     width: fit-content;
 }
 
+.gap {
+    gap: 20px;
+}
+
 .border {
     border-radius: 254px 14px 226px 16px/14px 224px 16px 254px;
     border-width: 3px;
