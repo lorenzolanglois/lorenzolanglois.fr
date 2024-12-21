@@ -7,7 +7,7 @@
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBTEF1J70Q"></script>
   <script>
-    if (window.location.hostname != "localhost") {
+    if (window.location.hostname === "lorenzolanglois.fr") {
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
@@ -42,51 +42,37 @@
 
 <body>
   <alert id="alert">Site toujours en cours de construction</alert>
+  <img id="eraser" alt="Eraser" src="assets/eraser.svg"/>
   <canvas id="drawable"></canvas>
   <h1><a href="https://lorenzolanglois.fr">Bienvenue sur lorenzolanglois.fr</a></h1>
-  <div class="flex-left">
-      <img class="border" src="assets/lorenzo.webp" style="height: 340px;" alt="Photo de Lorenzo Langlois">
-    <div class="flex-down">
-      <h3>Lorenzo Langlois</h3>
-      <div class="flex-left social">
-        <a href="https://linkedin.com/in/lorenzo-langlois/" target="_blank"><img src="assets/social/linkedin.svg"></a>
-      </div>
-      <p>Étudiant de troisième année à epitech</p>
+  <div class="flex-down">
+    <h3>Lorenzo Langlois</h3>
+    <div class="flex-left social">
+      <a href="https://linkedin.com/in/lorenzo-langlois/" target="_blank"><img src="assets/social/linkedin.svg"></a>
       <a href="#cv"><button class="border">Voir le cv</button></a>
     </div>
+    <p>Étudiant de quatrième année à Epitech</p>
   </div>
-  <h2 id="projetsRealises">Quelques projets réalisés</h2>
-  <h3 id="rpg">Jeu vidéo de type RPG</h3>
-  <div class="flex-left category">
-      <div class="flex-down" style="width: 75%;">
+  <h2 id="projectsDone">Quelques projets réalisés...</h2>
+  <div id ="fasa" class="flex-down project">
+    <h3><img alt="Logo de Project F.A.S.A." title="Project F.A.S.A." src="assets/fasa/logo.webp" /></h3>
+    <div class="flex-left category">
+      <div class="flex-down">
         <h3>Trailer</h3>
-        <video src="assets/myrpg/myrpg_trailer.mp4" class="border" preload="metadata" poster="assets/myrpg/myrpg_trailer_thumbnail.webp" title="Trailer du projet myrpg" onloadstart="this.volume=0.2" controls></video>
+        <video src="assets/fasa/trailer.mp4" class="border" preload="metadata" poster="assets/fasa/screenshot1.webp" title="Trailer de F.A.S.A." onloadstart="this.volume=0.4" controls></video>
       </div>
       <div class="flex-down">
-        <p>Groupe de 4</p>
-        <p>Réalisé en première année</p>
+        <p>Groupe de 3</p>
+        <p>Réalisé en quatrième année</p>
         <div class="flex-left technologies">
-            <img src="assets/technologies/c.svg" alt="Langage C" title="Langage C"></img>
-            <img src="assets/technologies/sfml.svg" alt="Librarie SFML" title="Librarie SFML"></img>
+            <img src="assets/technologies/unreal.svg" alt="Unreal Engine" title="Unreal Engine"></img>
         </div>
       </div>
+    </div>
   </div>
-  <h3 id="raytracing">Raytracing</h3>
-  <div class="flex-left category">
-    <div class="flex-down" style="width: 75%;">
-      <h3>Photo</h3>
-      <img style="width: 50%;" src="assets/raytracing/raytracing1.png">
-    </div>
-    <div class="flex-down">
-      <p>Groupe de 4</p>
-      <p>Réalisé en deuxième année</p>
-      <div class="flex-left technologies">
-          <img src="assets/technologies/cpp.svg" alt="Langage C++" title="Langage C++"></img>
-      </div>
-    </div>
-</div>
   <h2 id="cv">CV</h2>
   <a href="/assets/CV_Lorenzo_Langlois.pdf" download><button class="border">Télécharger le cv</button></a>
+  <footer class="flex-down"><a>Crédits</a></footer>
   <script src="js/index.js"></script>
 </body>
 

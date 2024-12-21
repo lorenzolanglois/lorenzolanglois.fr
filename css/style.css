@@ -26,7 +26,6 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 0 100px 60px;
 }
 
 h1 {
@@ -41,22 +40,28 @@ a:link, a:visited {
 h2 {
     font-size: 40px;
     text-decoration: underline;
-    text-align: left;
+    text-align: center;
 }
 
 h3 {
     font-size: 30px;
-    text-align: left;
 }
 
-h1, h2, h3, p, img {
+h1, h2, h3, p {
     cursor: auto;
-    width: max-content;
+    width: auto;
+}
+
+img {
+    cursor: auto
+}
+
+h3 > img {
+    height: 125px;
 }
 
 alert {
-    position: fixed;
-    top: 0;
+    margin-top: -8px;
     width: 100%;
     background-color: black;
     color: white;
@@ -64,22 +69,43 @@ alert {
     z-index: 100;
 }
 
+footer {
+    margin-top: 40px;
+    margin-bottom: -8px;
+    width: 100%;
+    background-color: black;
+    color: white;
+    border-radius: 25px 25px 0 0;
+    z-index: 100;
+}
+
 .flex-left {
     display: flex;
     flex-direction: row;
-    width: -webkit-fill-available;
+    width: 100%;
 }
 
 .flex-down {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: -webkit-fill-available;
+    width: 100%;
     justify-content: center;
 }
 
-.category .flex-down {
-    width: max-content;
+.category div:first-child {
+    width: 100%;
+}
+
+.category div:last-child {
+    width: 50%;
+}
+
+.project {
+    width: 100%;
+    padding: 0 8px 40px 8px;
+    backdrop-filter: blur(8px) invert(100%);
 }
 
 #drawable {
@@ -87,7 +113,20 @@ alert {
     width: 100%;
     top: 0;
     left: 0;
-    z-index: -5;
+    z-index: -10;
+}
+
+#eraser {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    position: fixed;
+    z-index: 200;
+    bottom: 15px;
+    right: 10px;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px -5px #000;
 }
 
 p {
@@ -103,7 +142,7 @@ button {
 
 img {
     margin: 20px;
-    z-index: -6;
+    z-index: 1;
 }
 
 video {
@@ -113,6 +152,7 @@ video {
 
 .social {
     width: auto;
+    gap: 10px;
 }
 
 .social img {
@@ -126,15 +166,16 @@ video {
 }
 
 .technologies img {
-    z-index: 1;
     height: 80px;
     position: relative;
+    width: fit-content;
 }
 
 .border {
     border-radius: 254px 14px 226px 16px/14px 224px 16px 254px;
     border-width: 3px;
     border-style: solid;
+    border-color: black;
 }
 
 button.border:hover {
@@ -142,13 +183,43 @@ button.border:hover {
     color: white;
 }
 
+#fasa {
+    background: radial-gradient(circle, #935ffbc8 0%, #8d67e0c8 100%);
+}
+
+#fasa * {
+    font-family: "EthnocentricRegular", Arial;
+    color: white;
+}
+
 @media (max-width:725px) {
+    h1, h2, h3, p {
+        text-align: center;
+    }
+
+    h3 > img {
+        height: 80px;
+    }
+
     h1 {
         font-size: 35px;
+    }
+
+    h2 {
+        font-size: 35px;
+    }
+
+    .category div:last-child {
+        width: 100%;
     }
 
     .flex-left {
         width: auto;
         flex-direction: column;
+        align-items: center;
+    }
+
+    alert {
+        font-size: 14px;
     }
 }

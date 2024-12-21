@@ -4,11 +4,13 @@ const canvas = document.getElementById("drawable");
 const context = canvas.getContext("2d", { willReadFrequently: true });
 var isPainting = false;
 
-canvas.width = window.innerWidth;
-canvas.height = document.body.clientHeight;
-context.lineWidth = 5;
-context.lineCap = "round";
-context.strokeStyle = "yellow";
+window.addEventListener('load', function () {
+    canvas.width = window.innerWidth;
+    canvas.height = document.body.clientHeight;
+    context.lineWidth = 5;
+    context.lineCap = "round";
+    context.strokeStyle = "yellow";
+});
 
 window.addEventListener("resize", function () {
     if (window.innerHeight > canvas.height || window.innerWidth > canvas.width) {
@@ -27,6 +29,7 @@ document.body.addEventListener("mousedown", function (e) {
     && e.target.tagName != "P" && e.target.tagName != "IMG" && e.target.tagName != "BUTTON"
     && e.target.tagName != "VIDEO") {
         isPainting = true;
+        document.getSelection().removeAllRanges();
         document.documentElement.style.userSelect = "none";
     }
 });
@@ -45,13 +48,6 @@ document.body.addEventListener("mousemove", function (e) {
     context.moveTo(e.clientX, e.clientY + window.scrollY);
 });
 
-const alert = document.getElementById("alert");
-
-document.body.onscroll = () => {
-    if (window.scrollY > 32) {
-        alert.style.visibility = "hidden"
-    } else {
-        alert.style.opacity = (100 - window.scrollY * 4).toString() + "%";
-        alert.style.visibility = "visible"
-    }
-};
+document.getElementById("eraser").addEventListener("click", function (e) {
+    context.clearRect(0, 0, canvas.width, canvas.height);
+});

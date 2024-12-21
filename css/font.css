@@ -1,6 +1,6 @@
 @font-face {
-    font-family: '3Dumb Pro';
-    src: url('../fonts/DumbPro.ttf') format('truetype');
+    font-family: "EthnocentricRegular";
+    src: url('../fonts/EthnocentricRegular.woff2') format('woff2'), url('../fonts/EthnocentricRegular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;

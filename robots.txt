@@ -1,7 +1,9 @@
 User-agent: *
 
-Disallow: /assets/lorenzo.webp
-
-Allow: /
+Disallow: /assets/crayon.svg
+Disallow: /assets/eraser.svg
+Disallow: /assets/point.svg
+Disallow: /assets/technologies/*.svg
+Disallow: /assets/social/*.svg
 
 Sitemap: https://lorenzolanglois.fr/sitemap.xml
