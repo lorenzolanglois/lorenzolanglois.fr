@@ -49,7 +49,7 @@
     <h3>Lorenzo Langlois</h3>
     <div class="flex-left social">
       <a href="https://linkedin.com/in/lorenzo-langlois/" target="_blank"><img alt="Logo de LinkedIn" title="LinkedIn" src="assets/social/linkedin.svg"></a>
-      <a href="#cv"><button class="border">Voir le cv</button></a>
+      <a href="#cv"><button type="button" class="border">Voir le cv</button></a>
     </div>
     <p>Étudiant de quatrième année à Epitech</p>
   </div>
@@ -82,9 +82,17 @@
   </div>
   <h2 id="cv">CV</h2>
   <div class="flex-down gap">
-    <a href="/assets/CV_Lorenzo_Langlois.pdf" target="_blank"><button class="border">Ouvrir le CV dans une autre page</button></a>
-    <a href="/assets/CV_Lorenzo_Langlois.pdf" download><button class="border">Télécharger le CV</button></a>
+    <a href="/assets/CV_Lorenzo_Langlois.pdf" target="_blank"><button type="button" class="border">Ouvrir le CV dans une autre page</button></a>
+    <a href="/assets/CV_Lorenzo_Langlois.pdf" download><button type="button" class="border">Télécharger le CV</button></a>
   </div>
+  <h2 id="contact">Contact</h2>
+  <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+  <p id="contactText">Message envoyé avec succès !</p>
+  <form id="contactForm" action="https://formspree.io/f/xovvwady" method="POST" class="flex-down gap" target="dummyframe">
+    <label>Votre email :<input required type="email" name="email" class="border"></label>
+    <label>Votre message:<textarea required name="message" class="border"></textarea></label>
+    <button type="submit" class="border">Send</button>
+  </form>
   <footer class="flex-down">Crédits</footer>
   <script src="js/index.js"></script>
 </body>

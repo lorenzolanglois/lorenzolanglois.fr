@@ -4,13 +4,19 @@ const canvas = document.getElementById("drawable");
 const context = canvas.getContext("2d", { willReadFrequently: true });
 var isPainting = false;
 
-window.addEventListener('load', function () {
+window.addEventListener("load", function () {
     canvas.width = window.innerWidth;
     canvas.height = document.body.clientHeight;
     context.lineWidth = 5;
     context.lineCap = "round";
     context.strokeStyle = "yellow";
 });
+
+window.addEventListener("submit", function () {
+    document.getElementById("contactForm").style.display = "none";
+    document.getElementById("contactText").style.display = "block";
+    canvas.height = document.body.clientHeight;
+})
 
 window.addEventListener("resize", function () {
     if (window.innerHeight > canvas.height || window.innerWidth > canvas.width) {
