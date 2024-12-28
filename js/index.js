@@ -1,7 +1,9 @@
 "use strict";
 
+const eraser = document.getElementById("eraser");
 const canvas = document.getElementById("drawable");
 const context = canvas.getContext("2d", { willReadFrequently: true });
+
 var isPainting = false;
 
 window.addEventListener("load", function () {
@@ -16,7 +18,7 @@ window.addEventListener("submit", function () {
     document.getElementById("contactForm").style.display = "none";
     document.getElementById("contactText").style.display = "block";
     canvas.height = document.body.clientHeight;
-})
+});
 
 window.addEventListener("resize", function () {
     if (window.innerHeight > canvas.height || window.innerWidth > canvas.width) {
@@ -35,6 +37,8 @@ document.body.addEventListener("mousedown", function (e) {
     && e.target.tagName != "P" && e.target.tagName != "IMG" && e.target.tagName != "BUTTON"
     && e.target.tagName != "VIDEO") {
         isPainting = true;
+        eraser.style.display = "block";
+        eraser.style.opacity = 1;
         document.getSelection().removeAllRanges();
         document.documentElement.style.userSelect = "none";
     }
@@ -54,6 +58,8 @@ document.body.addEventListener("mousemove", function (e) {
     context.moveTo(e.clientX, e.clientY + window.scrollY);
 });
 
-document.getElementById("eraser").addEventListener("click", function (e) {
+document.getElementById("eraser").addEventListener("click", function () {
+    eraser.style.display = "none";
+    eraser.style.opacity = 0;
     context.clearRect(0, 0, canvas.width, canvas.height);
 });
