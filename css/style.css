@@ -196,7 +196,7 @@ label input, label textarea {
 }
 
 .category div:last-child {
-    width: 50%;
+    width: auto;
 }
 
 .project {
