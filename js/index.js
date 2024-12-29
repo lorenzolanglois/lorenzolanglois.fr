@@ -2,10 +2,13 @@
 
 const eraser = document.getElementById("eraser");
 const canvas = document.getElementById("drawable");
+const footer = document.getElementsByTagName("footer")[0];
+const credits = document.getElementsByTagName("credits")[0];
 const context = canvas.getContext("2d", { willReadFrequently: true });
 const allowedTags = new Set(["DIV", "BODY", "FORM"]);
 
 var isPainting = false;
+var isCredits = false;
 
 window.addEventListener("load", function () {
     canvas.width = window.innerWidth;
@@ -33,8 +36,8 @@ window.addEventListener("resize", function () {
     }
 });
 
-document.body.addEventListener("mousedown", function (e) {
-    if (allowedTags.has(e.target.tagName)) {
+document.body.addEventListener("pointerdown", function (e) {
+    if (allowedTags.has(e.target.tagName) && e.pointerType === "mouse") {
         isPainting = true;
         eraser.style.display = "block";
         eraser.style.opacity = 1;
@@ -43,13 +46,13 @@ document.body.addEventListener("mousedown", function (e) {
     }
 });
 
-document.body.addEventListener("mouseup", function () {
+document.body.addEventListener("pointerup", function () {
     isPainting = false;
     context.beginPath();
     document.documentElement.style.userSelect = "auto";
 });
 
-document.body.addEventListener("mousemove", function (e) {
+document.body.addEventListener("pointermove", function (e) {
     if (!isPainting) return;
     context.lineTo(e.clientX, e.clientY + window.scrollY);
     context.stroke();
@@ -57,8 +60,18 @@ document.body.addEventListener("mousemove", function (e) {
     context.moveTo(e.clientX, e.clientY + window.scrollY);
 });
 
-document.getElementById("eraser").addEventListener("click", function () {
+eraser.addEventListener("click", function () {
     eraser.style.display = "none";
     eraser.style.opacity = 0;
     context.clearRect(0, 0, canvas.width, canvas.height);
+});
+
+footer.addEventListener("click", function () {
+    if (isCredits) {
+        isCredits = false;
+        credits.style.display = "none";
+    } else {
+        isCredits = true;
+        credits.style.display = "flex";
+    }
 });
