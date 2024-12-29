@@ -3,6 +3,7 @@
 const eraser = document.getElementById("eraser");
 const canvas = document.getElementById("drawable");
 const context = canvas.getContext("2d", { willReadFrequently: true });
+const allowedTags = new Set(["DIV", "BODY", "FORM"]);
 
 var isPainting = false;
 
@@ -33,9 +34,7 @@ window.addEventListener("resize", function () {
 });
 
 document.body.addEventListener("mousedown", function (e) {
-    if (e.target.tagName != "H1" && e.target.tagName != "H2" && e.target.tagName != "H3"
-    && e.target.tagName != "P" && e.target.tagName != "IMG" && e.target.tagName != "BUTTON"
-    && e.target.tagName != "VIDEO") {
+    if (allowedTags.has(e.target.tagName)) {
         isPainting = true;
         eraser.style.display = "block";
         eraser.style.opacity = 1;

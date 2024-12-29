@@ -29,6 +29,7 @@ body {
     width: 100%;
     box-sizing: border-box;
     margin: 0;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -170,7 +171,6 @@ label input, label textarea {
 
 #drawable {
     position: absolute;
-    width: 100%;
     top: 0;
     left: 0;
     z-index: -10;
