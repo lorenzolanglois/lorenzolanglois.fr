@@ -93,7 +93,13 @@
       <p>La police "Ethnocentric" est utilisée sur ce site avec une licence Webfont obtenue auprès de <a href="https://www.myfonts.com" target="_blank" title="Site officiel de MyFonts">MyFonts</a>. Copyright © 2024 Monotype Imaging Inc. Tous droits réservés.</p>
     </creditscontent>
   </credits>
-  <script src="js/index.js"></script>
+  <script>
+    window.addEventListener("load", function () {
+      const script = document.createElement('script');
+      script.src = "js/index.js";
+      document.head.appendChild(script);
+    });
+  </script>
 </body>
 
 </html>

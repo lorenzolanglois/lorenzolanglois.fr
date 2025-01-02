@@ -10,13 +10,11 @@ const allowedTags = new Set(["DIV", "BODY", "FORM"]);
 var isPainting = false;
 var isCredits = false;
 
-window.addEventListener("load", function () {
-    canvas.width = window.innerWidth;
-    canvas.height = document.body.clientHeight;
-    context.lineWidth = 5;
-    context.lineCap = "round";
-    context.strokeStyle = "yellow";
-});
+canvas.width = window.innerWidth;
+canvas.height = document.body.clientHeight;
+context.lineWidth = 5;
+context.lineCap = "round";
+context.strokeStyle = "yellow";
 
 window.addEventListener("submit", function () {
     document.getElementById("contactForm").style.display = "none";
