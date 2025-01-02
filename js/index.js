@@ -40,7 +40,6 @@ document.body.addEventListener("pointerdown", function (e) {
     if (allowedTags.has(e.target.tagName) && e.pointerType === "mouse") {
         isPainting = true;
         eraser.style.display = "block";
-        eraser.style.opacity = 1;
         document.getSelection().removeAllRanges();
         document.documentElement.style.userSelect = "none";
     }
@@ -62,7 +61,6 @@ document.body.addEventListener("pointermove", function (e) {
 
 eraser.addEventListener("click", function () {
     eraser.style.display = "none";
-    eraser.style.opacity = 0;
     context.clearRect(0, 0, canvas.width, canvas.height);
 });
 

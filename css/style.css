@@ -111,7 +111,7 @@ footer:active + credits {
     transform: translate(-50%, -50%) scale(1.05);
 }
 
-creditsContent {
+creditscontent {
     padding-top: 10px;
     height: 100%;
     width: 100%;
@@ -122,7 +122,7 @@ creditsContent {
     border-left: 2px solid #000000;
 }
 
-creditsContent p, creditsContent h3, creditsContent h1 {
+creditscontent p, creditscontent h3, creditscontent h1 {
     line-height: 75px;
     margin-bottom: 0;
     margin-top: 0;
@@ -223,7 +223,6 @@ label input, label textarea {
 
 #eraser {
     display: none;
-    opacity: 0;
     transition: opacity 1s;
     width: 50px;
     height: 50px;
@@ -262,12 +261,10 @@ label input, label textarea {
 @keyframes eraserAnimation {
     0% {
         transform: translateY(200px) scale(1) rotate(0deg);
-        opacity: 0;
     }
 
     80% {
         transform: translateY(-10px) rotate(15deg);
-        opacity: 1;
     }
 
     87% {
