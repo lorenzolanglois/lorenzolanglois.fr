@@ -16,6 +16,10 @@ context.lineWidth = 5;
 context.lineCap = "round";
 context.strokeStyle = "yellow";
 
+Array.from(document.getElementsByTagName("video")).forEach(element => {
+    element.poster = element.poster.replace("_small", "");
+});
+
 window.addEventListener("submit", function () {
     document.getElementById("contactForm").style.display = "none";
     document.getElementById("contactText").style.display = "block";
