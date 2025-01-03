@@ -1,3 +1,11 @@
+@font-face {
+    font-family: "Gloria Hallelujah";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("../fonts/GloriaHallelujahRegular.woff2") format("woff2"), url("../fonts/GloriaHallelujahRegular.woff") format("woff");
+}
+
 /**
  * @license
  * MyFonts Webfont Build ID 3867246, 2020-12-16T11:57:38-0500
@@ -16,8 +24,8 @@
 
 @font-face {
     font-family: "EthnocentricRegular";
-    src: url('../fonts/EthnocentricRegular.woff2') format('woff2'), url('../fonts/EthnocentricRegular.woff') format('woff');
-    font-weight: normal;
     font-style: normal;
+    font-weight: 400;
     font-display: swap;
+    src: url("../fonts/EthnocentricRegular.woff2") format("woff2"), url("../fonts/EthnocentricRegular.woff") format("woff");
 }

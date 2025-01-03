@@ -21,7 +21,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#161616">
-  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="preload" href="fonts/GloriaHallelujahRegular.woff2" as="font" crossorigin="anonymous">
   <link rel="stylesheet" href="css/font.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="css/style.css">
   <title>Lorenzo Langlois - Développeur</title>
@@ -29,7 +29,6 @@
 
 <body>
   <alert id="alert">Site toujours en cours de construction</alert>
-  <img id="eraser" alt="Logo recyclage pour effacer les dessins de la page" src="assets/eraser.svg"/>
   <canvas id="drawable"></canvas>
   <h1><a href="https://lorenzolanglois.fr">Bienvenue sur lorenzolanglois.fr</a></h1>
   <div class="flex-down">
@@ -42,7 +41,7 @@
   </div>
   <h2 id="projectsDone">Quelques projets réalisés...</h2>
   <div id ="fasa" class="flex-down project">
-    <h3><img alt="Logo du jeu Project F.A.S.A." title="Project F.A.S.A." src="assets/fasa/fasa_logo.webp" /></h3>
+    <img alt="Logo du jeu Project F.A.S.A." title="Project F.A.S.A." src="assets/fasa/fasa_logo.webp" />
     <div class="flex-left category">
       <div class="flex-down">
         <h3>Trailer</h3>
@@ -93,6 +92,7 @@
       <p>La police "Ethnocentric" est utilisée sur ce site avec une licence Webfont obtenue auprès de <a href="https://www.myfonts.com" target="_blank" title="Site officiel de MyFonts">MyFonts</a>. Copyright © 2024 Monotype Imaging Inc. Tous droits réservés.</p>
     </creditscontent>
   </credits>
+  <img id="eraser" alt="Logo recyclage pour effacer les dessins de la page" src="assets/eraser.svg"/>
   <script>
     window.addEventListener("load", function () {
       const script = document.createElement('script');

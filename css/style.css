@@ -1,5 +1,5 @@
 * {
-    font-family: "Gloria Hallelujah", Arial;
+    font-family: "Gloria Hallelujah", Comic Sans MS, Comic Sans, cursive;
     font-weight: normal;
 }
 
@@ -60,12 +60,14 @@ img {
     cursor: auto
 }
 
-h3 > img {
+.project > img {
     height: 125px;
+    margin: 55px 0;
 }
 
 alert {
     margin-top: -8px;
+    height: 32px;
     width: 100%;
     background-color: black;
     color: white;
@@ -290,7 +292,7 @@ p {
 
 button {
     background-color: white;
-    font-size: 20px;
+    font-size: 22px;
     transition: background-color 0.3s;
     cursor: pointer;
     color: black;
@@ -313,10 +315,15 @@ video {
 .social {
     width: auto;
     gap: 10px;
+    align-items: center;
+}
+
+.social a:has(img) {
+    height: 50px;
 }
 
 .social img {
-    height: 40px;
+    height: 50px;
     cursor: pointer;
     margin: 0;
 }
@@ -354,7 +361,7 @@ button.border:hover {
 }
 
 #fasa * {
-    font-family: "EthnocentricRegular", Arial;
+    font-family: "EthnocentricRegular", Arial, sans-serif;
     color: white;
 }
 
@@ -395,7 +402,7 @@ button.border:hover {
         text-align: center;
     }
 
-    h3 > img {
+    .project > img {
         height: 80px;
     }
 

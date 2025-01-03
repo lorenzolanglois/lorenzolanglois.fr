@@ -17,7 +17,7 @@ context.lineCap = "round";
 context.strokeStyle = "yellow";
 
 Array.from(document.getElementsByTagName("video")).forEach(element => {
-    element.poster = element.poster.replace("_small", "");
+    element.poster = element.poster.replace("_small", "_thumbnail");
 });
 
 window.addEventListener("submit", function () {
