@@ -4,17 +4,23 @@ const eraser = document.getElementById("eraser");
 const canvas = document.getElementById("drawable");
 const footer = document.getElementsByTagName("footer")[0];
 const credits = document.getElementsByTagName("credits")[0];
+const creditsOverlay = document.querySelector("overlay:has(credits)");
+const overlays = document.querySelectorAll("overlay");
+const galleryImages = document.querySelectorAll(".gallery a");
+const imageDisplay = document.querySelector("overlay img:first-child");
 const context = canvas.getContext("2d", { willReadFrequently: true });
 const allowedTags = new Set(["DIV", "BODY", "FORM"]);
 
 var isPainting = false;
-var isCredits = false;
 
 canvas.width = window.innerWidth;
 canvas.height = document.body.clientHeight;
 context.lineWidth = 5;
 context.lineCap = "round";
 context.strokeStyle = "yellow";
+
+imageDisplay.insertAdjacentHTML("afterend", '<img src="assets/spinner.svg">');
+const loadingImageDisplay = document.querySelector("overlay img:last-child");
 
 Array.from(document.getElementsByTagName("video")).forEach(element => {
     element.poster = element.poster.replace("_small", "_thumbnail");
@@ -66,12 +72,26 @@ eraser.addEventListener("click", function () {
     context.clearRect(0, 0, canvas.width, canvas.height);
 });
 
+overlays.forEach(function(elem) {
+    elem.addEventListener("click", function (e) {
+        if (e.target.tagName !== "OVERLAY") return;
+        elem.style.display = "none";
+    });
+});
+
 footer.addEventListener("click", function () {
-    if (isCredits) {
-        isCredits = false;
-        credits.style.display = "none";
-    } else {
-        isCredits = true;
-        credits.style.display = "flex";
-    }
+    creditsOverlay.style.display = "block";
+});
+
+galleryImages.forEach(function(elem) {
+    elem.addEventListener("click", function (e) {
+        e.preventDefault();
+        loadingImageDisplay.style.display = "block";
+        imageDisplay.parentElement.style.display = "block";
+        imageDisplay.src = elem.href;
+    });
+});
+
+imageDisplay.addEventListener("load", function () {
+    loadingImageDisplay.style.display = "none";
 });

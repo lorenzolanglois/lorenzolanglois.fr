@@ -4,10 +4,11 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="Découvrez mon CV et les différents projets que j'ai pu réaliser au cours de mes études et en dehors">
-  <meta name="keywords" content="Lorenzo Langlois, CV, Epitech, parcours, linkedin, réseaux">
+  <meta name="description" content="Découvrez mon CV et les différents projets que j'ai pu réaliser au cours de mes études et en dehors, notamment Sur Unreal Engine">
+  <meta name="keywords" content="Lorenzo Langlois, CV, Epitech, parcours, linkedin, réseaux, Unreal Engine">
   <meta property="og:url" content="http://lorenzolanglois.fr">
   <meta property="og:title" content="Lorenzo Langlois - Développeur">
+  <meta property="og:type" content="website">
   <meta property="og:description" content="Découvrez mon CV et les différents projets que j'ai pu réaliser au cours de mes études et en dehors">
   <meta property="og:site_name" content="Lorenzo Langlois">
   <meta property="og:image" content="http://lorenzolanglois.fr/image.png">
@@ -23,7 +24,7 @@
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#161616">
   <link rel="preload" href="fonts/GloriaHallelujahRegular.woff2" as="font" crossorigin="anonymous">
   <link rel="stylesheet" href="css/font.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.min.css">
   <title>Lorenzo Langlois - Développeur</title>
 </head>
 
@@ -35,12 +36,13 @@
     <p id="title">Lorenzo Langlois</p>
     <div class="flex-left social">
       <a href="https://linkedin.com/in/lorenzo-langlois/" target="_blank"><img alt="Logo de LinkedIn" title="LinkedIn" src="assets/social/linkedin.svg"></a>
+      <a href="https://www.youtube.com/@lorenzo.langlois" target="_blank"><img alt="Logo de YouTube" title="YouTube" src="assets/social/youtube.svg"></a>
       <a href="#cv"><button type="button" class="border">Voir le cv</button></a>
     </div>
     <p>Étudiant de quatrième année à Epitech Berlin</p>
   </div>
   <h2 id="projectsDone">Quelques projets réalisés...</h2>
-  <div id ="fasa" class="flex-down project">
+  <div id="fasa" class="flex-down project">
     <img alt="Logo du jeu Project F.A.S.A." title="Project F.A.S.A." src="assets/fasa/fasa_logo.webp" />
     <div class="flex-left category">
       <div class="flex-down">
@@ -61,10 +63,10 @@
     <div id="fasaGallery" class="flex-down">
       <h3>Images</h3>
       <div class="flex-left gallery">
-        <a href="assets/fasa/fasa_screenshot1.webp" target="_blank"><img alt="Screenshot de F.A.S.A. montrant une rue avec des neons colorés et des aliens serpents" src="assets/fasa/fasa_screenshot1_small.webp"></a>
-        <a href="assets/fasa/fasa_screenshot2.webp" target="_blank"><img alt="Screenshot de F.A.S.A. montrant le joueur en train de tirer sur des aliens" src="assets/fasa/fasa_screenshot2_small.webp"></a>
-        <a href="assets/fasa/fasa_screenshot3.webp" target="_blank"><img alt="Screenshot de F.A.S.A. montrant le joueur dans l'espace en train de tirer sur le roi des aliens" src="assets/fasa/fasa_screenshot3_small.webp"></a>
-        <a href="assets/fasa/fasa_screenshot4.webp" target="_blank"><img alt="Screenshot de F.A.S.A. montrant les crédits du jeu avec l'espace et un lampadaire volant en fond" src="assets/fasa/fasa_screenshot4_small.webp"></a>
+        <a href="assets/fasa/fasa_screenshot1.webp"><img alt="Screenshot de F.A.S.A. montrant une rue avec des neons colorés et des aliens serpents" src="assets/fasa/fasa_screenshot1_small.webp"></a>
+        <a href="assets/fasa/fasa_screenshot2.webp"><img alt="Screenshot de F.A.S.A. montrant le joueur en train de tirer sur des aliens" src="assets/fasa/fasa_screenshot2_small.webp"></a>
+        <a href="assets/fasa/fasa_screenshot3.webp"><img alt="Screenshot de F.A.S.A. montrant le joueur dans l'espace en train de tirer sur le roi des aliens" src="assets/fasa/fasa_screenshot3_small.webp"></a>
+        <a href="assets/fasa/fasa_screenshot4.webp"><img alt="Screenshot de F.A.S.A. montrant les crédits du jeu avec l'espace et un lampadaire volant en fond" src="assets/fasa/fasa_screenshot4_small.webp"></a>
       </div>
     </div>
   </div>
@@ -74,7 +76,7 @@
     <a href="/assets/CV_Lorenzo_Langlois.pdf" download><button type="button" class="border">Télécharger le CV</button></a>
   </div>
   <h2 id="contact">Contact</h2>
-  <iframe title="Dummy frame" name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+  <iframe title="Dummy frame" name="dummyframe" id="dummyframe"></iframe>
   <p id="contactText">Message envoyé avec succès !</p>
   <form id="contactForm" action="https://formspree.io/f/xovvwady" method="POST" class="flex-down gap" target="dummyframe">
     <label>Votre email :<input required type="email" name="email" class="border"></label>
@@ -82,23 +84,107 @@
     <button type="submit" class="border">Envoyer</button>
   </form>
   <footer>Crédits</footer>
-  <credits>
-    <creditscontent>
-      <h1>Credits</h1>
-      <p>Site réalisé par Lorenzo Langlois</p>
-      <p>Le formulaire de contact envoie une requête vers l'api de <a href="https://formspree.io/" target="_blank" title="Site officiel de Formspree">formspree.io</a></p>
-      <h3><br>Polices d'écritures</h3>
-      <p>La police "Gloria Hallelujah" est conçue par Kimberly Geswein (© 2010, <a href="https://kimberlygeswein.com" target="_blank" title="Site officiel de Kimberly Geswein">kimberlygeswein.com</a>) et est sous licence <a href="https://openfontlicense.org/open-font-license-official-text/" target="_blank" title="Text officiel de la license SIL Open Font License 1.1">SIL Open Font License 1.1</a>.</p>
-      <p>La police "Ethnocentric" est utilisée sur ce site avec une licence Webfont obtenue auprès de <a href="https://www.myfonts.com" target="_blank" title="Site officiel de MyFonts">MyFonts</a>. Copyright © 2024 Monotype Imaging Inc. Tous droits réservés.</p>
-    </creditscontent>
-  </credits>
+  <overlay>
+    <credits>
+      <creditscontent>
+        <p class="h1">Credits</p>
+        <p>Site réalisé par Lorenzo Langlois</p>
+        <p>Le formulaire de contact envoie une requête vers l'api de <a href="https://formspree.io/" target="_blank" title="Site officiel de Formspree">formspree.io</a></p>
+        <p>Site réalisé par Lorenzo Langlois</p>
+        <p>Les svg sont soit libres de droit ou fait pour le site</p>
+        <p class="h2"><br>Polices d'écritures</p>
+        <p>La police "Gloria Hallelujah" est conçue par Kimberly Geswein (© 2010, <a href="https://kimberlygeswein.com" target="_blank" title="Site officiel de Kimberly Geswein">kimberlygeswein.com</a>) et est sous licence <a href="https://openfontlicense.org/open-font-license-official-text/" target="_blank" title="Text officiel de la license SIL Open Font License 1.1">SIL Open Font License 1.1</a>.</p>
+        <p>La police "Ethnocentric" est utilisée sur ce site avec une licence Webfont obtenue auprès de <a href="https://www.myfonts.com" target="_blank" title="Site officiel de MyFonts">MyFonts</a>. Copyright © 2024 Monotype Imaging Inc. Tous droits réservés.</p>
+      </creditscontent>
+    </credits>
+  </overlay>
+  <overlay>
+    <img />
+  </overlay>
   <img id="eraser" alt="Logo recyclage pour effacer les dessins de la page" src="assets/eraser.svg"/>
   <script>
     window.addEventListener("load", function () {
       const script = document.createElement('script');
-      script.src = "js/index.js";
+      script.src = "js/index.min.js";
       document.head.appendChild(script);
     });
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "Project F.A.S.A.",
+    "alternateName": "Fasa",
+    "url": "https://lorenzolanglois.fr/#fasa",
+    "playMode": "SinglePlayer",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://lorenzolanglois.fr/assets/fasa/fasa_logo.webp",
+      "caption": "Logo of Project F.A.S.A.",
+      "width": 834,
+      "height": 253
+    },
+    "description": "In a dystopian world where space creatures are taking over, only one person is capable of killing those indomitable aliens",
+    "inLanguage":["English"],
+    "author":{
+      "@type":"Person",
+      "name":"Lorenzo Langlois",
+      "givenName":"Lorenzo",
+      "familyName":"Langlois",
+      "gender":"Male",
+      "url":"https://lorenzolanglois.fr",
+      "nationality": {
+        "@type": "Country",
+        "name": "France",
+        "identifier": "FR"
+      }
+    },
+    "genre":"Action 3D first-person shooter",
+    "gamePlatform":"PC",
+    "musicBy": {
+      "@type": "Person",
+      "name": "Lorenzo Langlois",
+      "givenName":"Lorenzo",
+      "familyName":"Langlois",
+      "gender":"Male",
+      "url":"https://lorenzolanglois.fr",
+      "nationality": {
+        "@type": "Country",
+        "name": "France",
+        "identifier": "FR"
+      }
+    },
+    "screenshot": [
+      {
+        "@type": "ImageObject",
+        "url": "https://lorenzolanglois.fr/assets/fasa/fasa_screenshot1.webp",
+        "caption": "A street with concrete and neon buildings and aliens",
+        "width": 1734,
+        "height": 973
+      },
+      {
+        "@type": "ImageObject",
+        "url": "https://lorenzolanglois.fr/assets/fasa/fasa_screenshot2.webp",
+        "caption": "Fight with the aliens in the street",
+        "width": 1517,
+        "height": 973
+      },
+      {
+        "@type": "ImageObject",
+        "url": "https://lorenzolanglois.fr/assets/fasa/fasa_screenshot3.webp",
+        "caption": "Fighting the final boss",
+        "width": 1517,
+        "height": 973
+      },
+      {
+        "@type": "ImageObject",
+        "url": "https://lorenzolanglois.fr/assets/fasa/fasa_screenshot4.webp",
+        "caption": "End credits",
+        "width": 1517,
+        "height": 973
+      }
+    ]
+  }
   </script>
 </body>
 

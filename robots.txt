@@ -2,7 +2,9 @@ User-agent: *
 
 Disallow: /assets/crayon.svg
 Disallow: /assets/eraser.svg
+Disallow: /assets/eraser_alt.svg
 Disallow: /assets/point.svg
+Disallow: /assets/spinner.svg
 Disallow: /assets/technologies/*.svg
 Disallow: /assets/social/*.svg
 
