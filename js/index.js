@@ -8,10 +8,13 @@ const creditsOverlay = document.querySelector("overlay:has(credits)");
 const overlays = document.querySelectorAll("overlay");
 const galleryImages = document.querySelectorAll(".gallery a");
 const imageDisplay = document.querySelector("overlay img:first-child");
+const languageLinks = document.querySelectorAll("topbar a:not(:has(img))");
 const context = canvas.getContext("2d", { willReadFrequently: true });
 const allowedTags = new Set(["DIV", "BODY", "FORM"]);
+const languageNames = ["frFrançais", "enEnglish"];
 
 var isPainting = false;
+var lang = (window.location.href.split('/').pop() || "fr");
 
 canvas.width = window.innerWidth;
 canvas.height = document.body.clientHeight;
@@ -95,3 +98,52 @@ galleryImages.forEach(function(elem) {
 imageDisplay.addEventListener("load", function () {
     loadingImageDisplay.style.display = "none";
 });
+
+languageLinks.forEach(function(elem) {
+    elem.addEventListener("click", function (e) {
+        e.preventDefault();
+        elem.innerHTML = languageNames.find(item => item.startsWith(lang)).slice(2);
+        var oldLang = lang;
+        lang = (e.target.href.split('/').pop() || "fr");
+        if (lang === "fr") {
+            window.history.pushState("", "", "/");
+        } else  {
+            window.history.pushState("", "", e.target.href);
+        }
+        elem.href = oldLang === "fr" ? "/" : oldLang;
+        changeLanguage(lang);
+    });
+});
+
+function changeLanguage(_lang) {
+    fetch("lang/lang-" + _lang + ".json")
+        .then(response => response.json())
+        .then(data => {
+            document.querySelectorAll('[data-translate]').forEach(el => {
+                const key = el.getAttribute('data-translate');
+                const translationText = data.text[key];
+                const translationAlt = data.alt[key];
+                const translationTitle = data.title[key];
+                const translationHref = data.href[key];
+                var isTextReplaced = false;
+
+                el.childNodes.forEach(node => {
+                  if (node.nodeType === Node.TEXT_NODE && !isTextReplaced && translationText) {
+                    node.textContent = translationText;
+                    isTextReplaced = true;
+                  }
+                });
+                if (translationAlt) {
+                    el.alt = translationAlt;
+                }
+                if (translationTitle) {
+                    el.title = translationTitle;
+                }
+                if (translationHref) {
+                    el.href = translationHref;
+                }
+            });
+            document.documentElement.lang = _lang;
+            document.title = "Lorenzo Langlois - " + data.text["developer"];
+        });
+}

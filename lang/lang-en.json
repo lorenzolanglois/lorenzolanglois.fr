@@ -1,0 +1,53 @@
+{
+    "text": {
+        "welcome": "Welcome to lorenzolanglois.fr",
+        "see-cv": "Go to the cv",
+        "student": "Fourth year student at Epitch Berlin",
+        "some-projects": "Here's some projects I made...",
+        "trailer": "Trailer",
+        "group-3": "Group of 3",
+        "fourth-year": "Made in fourth year",
+        "1-month-and-half": "1 month and a half",
+        "images": "Images",
+        "open-cv": "Open the CV in another tab",
+        "download-cv": "Download the CV",
+        "contact": "Contact",
+        "send-with-success": "Message sent with success!",
+        "your-email": "Your email:",
+        "your-message": "Your message:",
+        "send": "Send",
+        "credits": "Credits",
+        "website-made-by": "Website made by Lorenzo Langlois",
+        "the-contact-form-sends": "The contact form sends a request to ",
+        "the-svg-are-either": "The svg are either copyright free or made for this website",
+        "fonts": "Fonts",
+        "the-gloria-hallelujah-font-is": "The font \"Gloria Hallelujah\" is made by Kimberly Geswein (© 2010, ",
+        "and-is-under-this-license": " and is under ",
+        "the-ethnocentric-font-is-used": "The font \"Ethnocentric\" is used on this website with a Webfont license obtained from ",
+        "all-rights-reserved": "All rights reserved.",
+        "developer": "Developer"
+    },
+    "alt": {
+        "linkedin-logo": "LinkedIn logo",
+        "youtube-logo": "YouTube logo",
+        "project-fasa-logo": "Project F.A.S.A. game logo",
+        "unreal-engine-logo": "Unreal Engine logo",
+        "blender-logo": "Blender logo",
+        "fl-studio-logo": "FL Studio logo",
+        "fasa-screenshot-1": "F.A.S.A. screenshot showing a street with colorful neons and alien snakes",
+        "fasa-screenshot-2": "F.A.S.A. screenshot showing the player shooting at aliens",
+        "fasa-screenshot-3": "F.A.S.A. screenshot showing the player in space shooting at the king of aliens",
+        "fasa-screenshot-4": "F.A.S.A. screenshot showing the end credits of the game in space with a floating street lamp in the background",
+        "eraser": "Recycling logo to erase drawings on the page"
+    },
+    "title": {
+        "fasa-trailer": "F.A.S.A. trailer",
+        "formspree": "Formspree official website",
+        "kimberlygeswein.com": "Kimberly Geswein official website",
+        "sil-open-font-license": "Official text for SIL Open Font License 1.1",
+        "myfonts": "MyFonts official website"
+    },
+    "href": {
+        "cv": "/assets/CV_Lorenzo_Langlois_en.pdf"
+    }
+}

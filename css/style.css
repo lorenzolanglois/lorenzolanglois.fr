@@ -73,14 +73,30 @@ iframe {
     margin: 55px 0;
 }
 
-alert {
-    margin-top: -8px;
-    height: 32px;
+topbar {
+    display: flex;
+    height: 40px;
     width: 100%;
-    background-color: black;
-    color: white;
     border-radius: 0 0 25px 25px;
     z-index: 100;
+    background-color: #000000;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+topbar a:link, topbar a:visited {
+    color: white;
+    z-index: 110;
+    margin: 0 40px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+topbar a img {
+    width: 40px;
+    height: 40px;
+    margin: 0;
 }
 
 footer {
@@ -117,11 +133,7 @@ credits {
     animation: creditsAnimation 0.8s ease;
 }
 
-overlay:active > credits {
-    transform: translate(-50%, -50%) scale(1.05);
-}
-
-overlay:active > img:first-child {
+overlay:active > credits, overlay:active > img:first-child {
     transform: translate(-50%, -50%) scale(1.05);
 }
 
@@ -497,10 +509,6 @@ button.border:hover {
         width: 100%;
         flex-direction: column;
         align-items: center;
-    }
-
-    alert {
-        font-size: 14px;
     }
 
     #contactForm {

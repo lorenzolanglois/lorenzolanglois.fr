@@ -1,0 +1,53 @@
+{
+    "text": {
+        "welcome": "Bienvenue sur lorenzolanglois.fr",
+        "see-cv": "Voir le cv",
+        "student": "Étudiant de quatrième année à Epitech Berlin",
+        "some-projects": "Quelques projets réalisés...",
+        "trailer": "Trailer",
+        "group-3": "Groupe de 3",
+        "fourth-year": "Réalisé en quatrième année",
+        "1-month-and-half": "1 mois et demi",
+        "images": "Images",
+        "open-cv": "Ouvrir le CV dans une autre page",
+        "download-cv": "Télécharger le CV",
+        "contact": "Contact",
+        "send-with-success": "Message envoyé avec succès !",
+        "your-email": "Votre email :",
+        "your-message": "Votre message :",
+        "send": "Envoyer",
+        "credits": "Crédits",
+        "website-made-by": "Site réalisé par Lorenzo Langlois",
+        "the-contact-form-sends": "Le formulaire de contact envoie une requête vers l'api de ",
+        "the-svg-are-either": "Les svg sont soit libres de droit ou fait pour le site",
+        "fonts": "Polices d'écritures",
+        "the-gloria-hallelujah-font-is": "La police \"Gloria Hallelujah\" est conçue par Kimberly Geswein (© 2010, ",
+        "and-is-under-this-license": " et est sous licence ",
+        "the-ethnocentric-font-is-used": "La police \"Ethnocentric\" est utilisée sur ce site avec une licence Webfont obtenue auprès de ",
+        "all-rights-reserved": "Tous droits réservés.",
+        "developer": "Développeur"
+    },
+    "alt": {
+        "linkedin-logo": "Logo de LinkedIn",
+        "youtube-logo": "Logo de YouTube",
+        "project-fasa-logo": "Logo du jeu Project F.A.S.A.",
+        "unreal-engine-logo": "Logo de Unreal Engine",
+        "blender-logo": "Logo de Blender",
+        "fl-studio-logo": "Logo de FL Studio",
+        "fasa-screenshot-1": "Screenshot de F.A.S.A. montrant une rue avec des neons colorés et des aliens serpents",
+        "fasa-screenshot-2": "Screenshot de F.A.S.A. montrant le joueur en train de tirer sur des aliens",
+        "fasa-screenshot-3": "Screenshot de F.A.S.A. montrant le joueur dans l'espace en train de tirer sur le roi des aliens",
+        "fasa-screenshot-4": "Screenshot de F.A.S.A. montrant les crédits du jeu avec l'espace et un lampadaire volant en fond",
+        "eraser": "Logo recyclage pour effacer les dessins de la page"
+    },
+    "title": {
+        "fasa-trailer": "Trailer de F.A.S.A.",
+        "formspree": "Site officiel de Formspree",
+        "kimberlygeswein.com": "Site officiel de Kimberly Geswein",
+        "sil-open-font-license": "Text officiel de la license SIL Open Font License 1.1",
+        "myfonts": "Site officiel de MyFonts"
+    },
+    "href": {
+        "cv": "/assets/CV_Lorenzo_Langlois.pdf"
+    }
+}
