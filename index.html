@@ -95,7 +95,7 @@
   <iframe title="Dummy frame" name="dummyframe" id="dummyframe"></iframe>
   <p id="contactText" data-translate="send-with-success">Message envoyé avec succès !</p>
   <form id="contactForm" action="https://formspree.io/f/xovvwady" method="POST" class="flex-down gap" target="dummyframe">
-    <label data-translate="your-email">Votre email :<input required type="email" name="email" class="border"></label>
+    <label data-translate="your-email">Votre email :<input required type="email" name="email" class="border" autocomplete="on"></label>
     <label data-translate="your-message">Votre message:<textarea required name="message" class="border"></textarea></label>
     <button type="submit" class="border" data-translate="send">Envoyer</button>
   </form>
@@ -114,7 +114,7 @@
     </credits>
   </overlay>
   <overlay>
-    <img />
+    <img alt="Lecteur d'image qui n'a actullement pas d'image chargée" data-translate="image-reader" />
   </overlay>
   <img id="eraser" data-translate="eraser" alt="Logo recyclage pour effacer les dessins de la page" src="assets/eraser.svg"/>
   <script>

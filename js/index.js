@@ -22,7 +22,7 @@ context.lineWidth = 5;
 context.lineCap = "round";
 context.strokeStyle = "yellow";
 
-imageDisplay.insertAdjacentHTML("afterend", '<img src="assets/spinner.svg">');
+imageDisplay.insertAdjacentHTML("afterend", '<img src="assets/spinner.svg" alt="Charge">');
 const loadingImageDisplay = document.querySelector("overlay img:last-child");
 
 Array.from(document.getElementsByTagName("video")).forEach(element => {
@@ -52,6 +52,7 @@ document.body.addEventListener("pointerdown", function (e) {
         isPainting = true;
         eraser.style.display = "block";
         document.getSelection().removeAllRanges();
+        document.documentElement.style['-webkit-user-select'] = "none";
         document.documentElement.style.userSelect = "none";
     }
 });
@@ -59,6 +60,7 @@ document.body.addEventListener("pointerdown", function (e) {
 document.body.addEventListener("pointerup", function () {
     isPainting = false;
     context.beginPath();
+    document.documentElement.style['-webkit-user-select'] = "auto";
     document.documentElement.style.userSelect = "auto";
 });
 
@@ -74,6 +76,15 @@ eraser.addEventListener("click", function () {
     eraser.style.display = "none";
     context.clearRect(0, 0, canvas.width, canvas.height);
 });
+
+eraser.addEventListener("pointerdown", function (e) {
+    e.preventDefault();
+    eraser.style.transform = "scale(1.05)";
+});
+
+eraser.addEventListener("pointerup", function () {
+    eraser.style.transform = "scale(1)";
+})
 
 overlays.forEach(function(elem) {
     elem.addEventListener("click", function (e) {
@@ -92,6 +103,7 @@ galleryImages.forEach(function(elem) {
         loadingImageDisplay.style.display = "block";
         imageDisplay.parentElement.style.display = "block";
         imageDisplay.src = elem.href;
+        imageDisplay.alt = elem.getElementsByTagName("IMG")[0].alt;
     });
 });
 

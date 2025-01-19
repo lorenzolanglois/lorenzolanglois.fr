@@ -67,10 +67,22 @@
     <div id="fasaGallery" class="flex-down">
       <h3 data-translate="images">Images</h3>
       <div class="flex-left gallery">
-        <a href="assets/fasa/fasa_screenshot1.webp" target="_blank"><img alt="F.A.S.A. screenshot showing a street with colorful neons and alien snakes" data-translate="fasa-screenshot-1" src="assets/fasa/fasa_screenshot1_small.webp"></a>
-        <a href="assets/fasa/fasa_screenshot2.webp" target="_blank"><img alt="F.A.S.A. screenshot showing the player shooting at aliens" data-translate="fasa-screenshot-2" src="assets/fasa/fasa_screenshot2_small.webp"></a>
-        <a href="assets/fasa/fasa_screenshot3.webp" target="_blank"><img alt="F.A.S.A. screenshot showing the player in space shooting at the king of aliens" data-translate="fasa-screenshot-3" src="assets/fasa/fasa_screenshot3_small.webp"></a>
-        <a href="assets/fasa/fasa_screenshot4.webp" target="_blank"><img alt="F.A.S.A. screenshot showing the end credits of the game in space with a floating street lamp in the background" data-translate="fasa-screenshot-4" src="assets/fasa/fasa_screenshot4_small.webp"></a>
+        <a href="assets/fasa/fasa_screenshot1.webp" target="_blank">
+          <img alt="F.A.S.A. screenshot showing a street with colorful neons and alien snakes" data-translate="fasa-screenshot-1"
+          srcset="assets/fasa/fasa_screenshot1_small.webp 580w, assets/fasa/fasa_screenshot1.webp 1734w" sizes="1px" src="assets/fasa/fasa_screenshot1_small.webp">
+        </a>
+        <a href="assets/fasa/fasa_screenshot2.webp" target="_blank">
+          <img alt="F.A.S.A. screenshot showing the player shooting at aliens" data-translate="fasa-screenshot-2"
+          srcset="assets/fasa/fasa_screenshot2_small.webp 580w, assets/fasa/fasa_screenshot2.webp 1517w" sizes="1px" src="assets/fasa/fasa_screenshot2_small.webp">
+        </a>
+        <a href="assets/fasa/fasa_screenshot3.webp" target="_blank">
+          <img alt="F.A.S.A. screenshot showing the player in space shooting at the king of aliens" data-translate="fasa-screenshot-3"
+          srcset="assets/fasa/fasa_screenshot3_small.webp 580w, assets/fasa/fasa_screenshot3.webp 1517w" sizes="1px" src="assets/fasa/fasa_screenshot3_small.webp">
+        </a>
+        <a href="assets/fasa/fasa_screenshot4.webp" target="_blank">
+          <img alt="F.A.S.A. screenshot showing the end credits of the game in space with a floating street lamp in the background" data-translate="fasa-screenshot-4"
+          srcset="assets/fasa/fasa_screenshot4_small.webp 580w, assets/fasa/fasa_screenshot4.webp 1517w" sizes="1px" src="assets/fasa/fasa_screenshot4_small.webp">
+        </a>
       </div>
     </div>
   </div>
@@ -83,7 +95,7 @@
   <iframe title="Dummy frame" name="dummyframe" id="dummyframe"></iframe>
   <p id="contactText" data-translate="send-with-success">Message sent with success!</p>
   <form id="contactForm" action="https://formspree.io/f/xovvwady" method="POST" class="flex-down gap" target="dummyframe">
-    <label data-translate="your-email">Your email:<input required type="email" name="email" class="border"></label>
+    <label data-translate="your-email">Your email:<input required type="email" name="email" class="border" autocomplete="on"></label>
     <label data-translate="your-message">Your message:<textarea required name="message" class="border"></textarea></label>
     <button type="submit" class="border" data-translate="send">Send</button>
   </form>
@@ -102,7 +114,7 @@
     </credits>
   </overlay>
   <overlay>
-    <img />
+    <img alt="Image reader that doesn't currently have an image loaded" data-translate="image-reader" />
   </overlay>
   <img id="eraser" data-translate="eraser" alt="Recycling logo to erase drawings on the page" src="assets/eraser.svg"/>
   <script>
