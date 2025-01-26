@@ -1,6 +1,6 @@
 {
     "text": {
-        "welcome": "Welcome to lorenzolanglois.fr",
+        "welcome-to": "Welcome to ",
         "see-cv": "Go to the cv",
         "student": "Fourth year student at Epitch Berlin",
         "some-projects": "Here's some projects I made...",
@@ -49,6 +49,7 @@
         "myfonts": "MyFonts official website"
     },
     "href": {
-        "cv": "/assets/CV_Lorenzo_Langlois_en.pdf"
+        "cv": "/assets/CV_Lorenzo_Langlois_en.pdf",
+        "lorenzolanglois.fr": "https://lorenzolanglois.fr/en"
     }
 }

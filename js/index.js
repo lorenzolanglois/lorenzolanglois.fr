@@ -3,7 +3,6 @@
 const eraser = document.getElementById("eraser");
 const canvas = document.getElementById("drawable");
 const footer = document.getElementsByTagName("footer")[0];
-const credits = document.getElementsByTagName("credits")[0];
 const creditsOverlay = document.querySelector("overlay:has(credits)");
 const overlays = document.querySelectorAll("overlay");
 const galleryImages = document.querySelectorAll(".gallery a");
@@ -21,6 +20,8 @@ canvas.height = document.body.clientHeight;
 context.lineWidth = 5;
 context.lineCap = "round";
 context.strokeStyle = "yellow";
+
+document.documentElement.style.cursor = 'url("../assets/crayon.svg"), auto';
 
 imageDisplay.insertAdjacentHTML("afterend", '<img src="assets/spinner.svg" alt="Charge">');
 const loadingImageDisplay = document.querySelector("overlay img:last-child");

@@ -1,11 +1,7 @@
-* {
-    font-family: "Gloria Hallelujah", Comic Sans MS, Comic Sans, cursive;
-    font-weight: normal;
-}
-
-html {
+html, input, textarea {
     scroll-behavior: smooth;
-    cursor: url("../assets/crayon.svg"), auto;
+    font-family: "Gloria Hallelujah", Comic Sans MS, Comic Sans, cursive;
+    font-weight: 500;
 }
 
 html::before {
@@ -19,7 +15,7 @@ html::before {
     background-image: url("../assets/point.svg");
     background-repeat: repeat;
     z-index: -10;
-  }
+}
 
 body {
     display: flex;
@@ -33,8 +29,12 @@ body {
 }
 
 h1, .h1 {
-    font-weight: bold;
+    font-weight: 100;
     font-size: 60px;
+}
+
+h1 a, .h1 a {
+    font-weight: 900;
 }
 
 .h1 {
@@ -136,6 +136,10 @@ credits {
 
 overlay:active > credits, overlay:active > img:first-child {
     transform: translate(-50%, -50%) scale(1.05);
+}
+
+credits:active, overlay img:first-child:active {
+    transform: translate(-50%, -50%) !important;
 }
 
 overlay {
@@ -370,11 +374,17 @@ label input, label textarea {
     display: none;
 }
 
+.synopsis p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+    margin: 5px 20px;
+}
+
 p {
     font-size: 20px;
 }
 
 button {
+    font-family: "Gloria Hallelujah", Comic Sans MS, Comic Sans, cursive;
     background-color: white;
     font-size: 22px;
     transition: background-color 0.3s;

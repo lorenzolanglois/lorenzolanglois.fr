@@ -1,6 +1,6 @@
 {
     "text": {
-        "welcome": "Bienvenue sur lorenzolanglois.fr",
+        "welcome-to": "Bienvenue sur ",
         "see-cv": "Voir le cv",
         "student": "Étudiant de quatrième année à Epitech Berlin",
         "some-projects": "Quelques projets réalisés...",
@@ -49,6 +49,7 @@
         "myfonts": "Site officiel de MyFonts"
     },
     "href": {
-        "cv": "/assets/CV_Lorenzo_Langlois.pdf"
+        "cv": "/assets/CV_Lorenzo_Langlois.pdf",
+        "lorenzolanglois.fr": "https://lorenzolanglois.fr"
     }
 }
