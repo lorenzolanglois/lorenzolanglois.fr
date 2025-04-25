@@ -6,7 +6,7 @@ const erase = document.getElementById("erase");
 const shake = document.getElementById("shake");
 const bubbles = document.getElementsByClassName("bubble");
 const input = document.getElementById("name-input");
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ ".split("");
 
 letters.forEach(letter => {
     createBubble(letter);
@@ -32,7 +32,11 @@ function createBubble(letter) {
     bubble.style.setProperty("--wiggle", wiggle);
 
     bubble.addEventListener("click", () => {
-        input.value += bubble.innerText;
+	if (bubble.innerText === "") {
+		input.value += " ";
+	} else {
+        	input.value += bubble.innerText;
+	}
         bubble.remove();
         createBubble(bubble.innerText);
     });
