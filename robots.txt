@@ -4,4 +4,8 @@ Disallow: /assets/*.svg
 Disallow: /assets/technologies/*.svg
 Disallow: /assets/social/*.svg
 
+Disallow: /ChampagneBubbleJam
+Disallow: /ChampagneBubbleJam/
+Disallow: /ChampagneBubbleJam/*
+
 Sitemap: https://lorenzolanglois.fr/sitemap.xml
