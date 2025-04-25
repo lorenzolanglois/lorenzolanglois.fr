@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Champagne Bubble Jam</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="input-container">
+        <label for="name-input">Your name: </label>
+        <input type="text" id="name-input" name="name-input" placeholder="Click bubbles to write..." readonly />
+        <button id="erase">⌫</button>
+        <button id="shake">Shake</button>
+    </div>
+    <div id="bottle-container">
+        <img style="position: absolute; z-index: 5; height: 700px; pointer-events: none" src="Champagne_bottle_front.svg">
+        <div id="bottle"></div>
+        <img style="position: absolute; z-index: -5; height: 700px;" src="Champagne_bottle.svg">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

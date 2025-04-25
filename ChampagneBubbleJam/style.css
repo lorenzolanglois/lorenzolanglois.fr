@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #fafafa;
+    font-family: sans-serif;
+    overflow: hidden;
+    background-image: url("./background.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0% 50%;
+}
+
+.input-container {
+    margin-bottom: 20px;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    width: fit-content;
+    z-index: 100;
+    color: white;
+    font-size: larger;
+}
+
+#erase {
+    background-color: white;
+    border: none;
+    border: 2px solid #333;
+    border-radius: 4px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#shake {
+    background-color: white;
+    border: none;
+    border: 2px solid #333;
+    border-radius: 4px;
+    height: 30px;
+    cursor: pointer;
+}
+
+input[name="name-input"] {
+    width: 300px;
+    font-size: 1.2rem;
+    padding: 8px;
+    border: 2px solid #333;
+    border-radius: 4px;
+}
+
+#bottle-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    animation: shake 20s infinite;
+    margin-right: 280px;
+    margin-top: 80px;
+}
+
+#bottle {
+    position: relative;
+    width: 185px;
+    height: 420px;
+    background: linear-gradient(to right, #141414 0%, #74ae22 100%);
+    border-radius: 100% 100% 45px 45px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    perspective: 300px;
+    clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+}
+
+.bubble {
+    position: absolute;
+    bottom: -50px;
+    left: var(--x);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6) 40%, rgba(255, 255, 255, 0.2) 80%);
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #004d40;
+    cursor: pointer;
+    box-shadow:
+        inset -4px -4px 8px rgba(0, 0, 0, 0.1),
+        inset 4px 4px 8px rgba(255, 255, 255, 0.7),
+        0 4px 12px rgba(0, 0, 0, 0.2);
+    transform-origin: center;
+    animation: rise var(--d) linear infinite, wiggle calc(var(--d)/4) ease-in-out infinite alternate;
+    animation-delay: var(--delay), var(--delay);
+}
+
+@keyframes rise {
+    0% {
+        transform: translate3d(0, 0, var(--z)) scale3d(var(--s), var(--s), var(--s));
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.9;
+    }
+
+    80% {
+        opacity: 0.1;
+    }
+
+    100% {
+        transform: translate3d(0, -550px, var(--z)) scale3d(var(--s), var(--s), var(--s));
+        opacity: 0;
+    }
+}
+
+@keyframes wiggle {
+    from {
+        left: var(--x);
+    }
+
+    to {
+        left: calc(var(--x) + var(--wiggle));
+    }
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(20deg); }
+    10% { transform: translate(-1px, -2px) rotate(19deg); }
+    20% { transform: translate(-3px, 0px) rotate(21deg); }
+    30% { transform: translate(3px, 2px) rotate(20deg); }
+    40% { transform: translate(1px, -1px) rotate(90deg); }
+    50% { transform: translate(-1px, 2px) rotate(92deg); }
+    60% { transform: translate(-3px, 1px) rotate(87deg); }
+    70% { transform: translate(3px, 1px) rotate(19deg); }
+    80% { transform: translate(-1px, -1px) rotate(21deg); }
+    90% { transform: translate(1px, 2px) rotate(20deg); }
+    100% { transform: translate(1px, 1px) rotate(20deg); }
+}
