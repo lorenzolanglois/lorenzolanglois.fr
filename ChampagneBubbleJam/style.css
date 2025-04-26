@@ -19,7 +19,7 @@ body {
 
 amp-audio {
     [class*="amphtml-fill-content"] {
-        display: none;
+        visibility: hidden;
         width: 100%;
     }
 }

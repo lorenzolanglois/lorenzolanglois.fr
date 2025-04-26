@@ -8,7 +8,7 @@ const shake = document.getElementById("shake");
 const breakAudio = document.getElementById("break");
 const shakeAudio = document.getElementById("shakeAudio");
 const pop = document.getElementById("pop");
-const bubbles = document.getElementsByClassName("bubble");
+var bubbles = document.getElementsByClassName("bubble");
 const input = document.getElementById("name-input");
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ ".split("");
 
@@ -62,6 +62,7 @@ function sleep(ms) {
 async function invertCase() {
     if (!isShards) {
         if (Math.random() * 10 > 9) {
+            isShards = true;
             shakeAudio.pause();
             shakeAudio.currentTime = 0;
             animate();
@@ -87,7 +88,8 @@ async function invertCase() {
     });
     await sleep(500);
     for (let i in bubbles) {
-        if (bubbles[i].innerText != undefined) {
+        console.log(bubbles[i]);
+        if (typeof bubbles[i] === "object") {
             if (bubbles[i].innerText === bubbles[i].innerText.toUpperCase()) {
                 bubbles[i].innerText = bubbles[i].innerText.toLowerCase();
             } else {
@@ -133,7 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function animate() {
-    isShards = true;
     bottleContainer.style.visibility = "hidden";
     breakAudio.play();
     for (let i = shards.length - 1; i >= 0; i--) {
@@ -151,10 +152,17 @@ async function animate() {
         if (s.y > window.innerHeight * 2) {
             shards = [];
             await sleep(2000);
+            bottleContainer.style.visibility = "visible";
             for (let i = 0; i < SPAWN_COUNT; i++) {
                 spawnShard();
             }
-            bottleContainer.style.visibility = "visible";
+            bubbles = document.getElementsByClassName("bubble");
+            while(bubbles[0]) {
+                bubbles[0].parentNode.removeChild(bubbles[0]);
+            }
+            letters.forEach(letter => {
+                createBubble(letter);
+            });
             erase.focus();
             isShards = false;
             return;
