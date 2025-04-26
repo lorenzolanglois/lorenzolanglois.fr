@@ -104,3 +104,15 @@ window.addEventListener('devicemotion', function(event) {
         }
     }
 });
+
+if (typeof DeviceMotionEvent.requestPermission === 'function') {
+    DeviceMotionEvent.requestPermission()
+        .then(permissionState => {
+            alert(permissionState)
+            if (permissionState === 'granted') {
+                alert(permissionState);
+                // Now you can listen to devicemotion
+            }
+        })
+        .catch(console.error);
+}
