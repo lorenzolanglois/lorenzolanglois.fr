@@ -162,3 +162,7 @@ async function animate() {
     }
     requestAnimationFrame(animate);
 }
+
+document.addEventListener('dblclick', function(event) {
+    event.preventDefault();
+}, { passive: false });
