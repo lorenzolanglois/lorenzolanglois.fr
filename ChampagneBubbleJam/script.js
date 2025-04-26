@@ -5,11 +5,17 @@ const bottleContainer = document.getElementById("bottle-container");
 const erase = document.getElementById("erase");
 const eraseAudio = document.getElementById("eraseAudio");
 const shake = document.getElementById("shake");
+const breakAudio = document.getElementById("break");
 const shakeAudio = document.getElementById("shakeAudio");
 const pop = document.getElementById("pop");
 const bubbles = document.getElementsByClassName("bubble");
 const input = document.getElementById("name-input");
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ ".split("");
+
+const SPAWN_COUNT = 10;
+const HORIZONTAL_SPREAD = 3;
+
+var isShards = false;
 
 letters.forEach(letter => {
     createBubble(letter);
@@ -54,6 +60,16 @@ function sleep(ms) {
 }
 
 async function invertCase() {
+    if (!isShards) {
+        if (Math.random() * 10 > 9) {
+            shakeAudio.pause();
+            shakeAudio.currentTime = 0;
+            animate();
+            return;
+        }
+    } else {
+        return;
+    }
     shakeAudio.currentTime = 0;
     shakeAudio.play();
     bottleContainer.animate([
@@ -88,4 +104,61 @@ erase.addEventListener("click", () => {
     input.value = input.value.substring(0, input.value.length - 1)
 });
 
-// shake.addEventListener("click", invertCase);
+shake.addEventListener("click", invertCase);
+
+var shards = [];
+
+function spawnShard() {
+    const shard = document.createElement('div');
+    shard.classList.add('shard');
+
+    shard.x = window.innerWidth / 2 * (Math.random() * 0.15 + 0.8);
+    shard.y = 100 * (Math.random() * 5 + 0.8);
+
+    shard.vx = (Math.random() - 0.5) * HORIZONTAL_SPREAD;
+    shard.vy = 0;
+
+    shard.style.left = shard.x + 'px';
+    shard.style.top = shard.y + 'px';
+    shard.style.rotate = Math.random() + (shard.x * Math.random()) + 'deg';
+
+    document.body.appendChild(shard);
+    shards.push(shard);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    for (let i = 0; i < SPAWN_COUNT; i++) {
+        spawnShard();
+    }
+});
+
+async function animate() {
+    isShards = true;
+    bottleContainer.style.visibility = "hidden";
+    breakAudio.play();
+    for (let i = shards.length - 1; i >= 0; i--) {
+        shards[i].style.opacity = 1;
+    }
+    for (let i = shards.length - 1; i >= 0; i--) {
+        const s = shards[i];
+        s.vy += (Math.random() * 0.3);
+        s.x += s.vx;
+        s.y += s.vy;
+
+        s.style.left = s.x + 'px';
+        s.style.top = s.y + 'px';
+
+        if (s.y > window.innerHeight * 2) {
+            shards = [];
+            await sleep(2000);
+            for (let i = 0; i < SPAWN_COUNT; i++) {
+                spawnShard();
+            }
+            bottleContainer.style.visibility = "visible";
+            erase.focus();
+            isShards = false;
+            return;
+        }
+    }
+    requestAnimationFrame(animate);
+}

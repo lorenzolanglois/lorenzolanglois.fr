@@ -7,12 +7,14 @@ body {
     justify-content: center;
     height: 100vh;
     background: #fafafa;
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif;
     overflow: hidden;
     background-image: url("./background.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0% 50%;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .input-container {
@@ -102,7 +104,18 @@ body {
     }
 }
 
+.shard {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background: url('shard.webp') no-repeat center center;
+    background-size: contain;
+    pointer-events: none;
+    opacity: 0;
+}
+
 input[name="name-input"] {
+    font-family: 'Montserrat', sans-serif;
     width: 300px;
     font-size: 1.2rem;
     padding: 8px;
@@ -138,6 +151,8 @@ input[name="name-input"] {
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-user-drag: none;
     background: radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6) 40%, rgba(255, 255, 255, 0.2) 80%);
     border: 2px solid rgba(255, 255, 255, 0.7);
     display: flex;
