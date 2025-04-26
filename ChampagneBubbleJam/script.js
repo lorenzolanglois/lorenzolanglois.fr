@@ -79,28 +79,3 @@ erase.addEventListener("click", () => {
 });
 
 shake.addEventListener("click", invertCase);
-
-let lastShakeTime = 0;
-
-window.addEventListener('devicemotion', function(event) {
-    const acceleration = event.accelerationIncludingGravity;
-    if (!acceleration) return;
-
-    const { x, y, z } = acceleration;
-
-    const shakeThreshold = 15; // You can tweak this
-    const now = Date.now();
-
-    // Calculate the overall acceleration
-    const accelerationMagnitude = Math.sqrt(x * x + y * y + z * z);
-
-    if (accelerationMagnitude > shakeThreshold) {
-        // To prevent too many triggers, check time between shakes
-        if (now - lastShakeTime > 1000) { // 1 second debounce
-            lastShakeTime = now;
-            console.log('Shake detected!');
-            this.alert("TEST");
-            // You can trigger your own custom event or function here
-        }
-    }
-});
