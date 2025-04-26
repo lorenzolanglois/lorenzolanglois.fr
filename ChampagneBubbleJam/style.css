@@ -26,22 +26,80 @@ body {
     font-size: larger;
 }
 
-#erase {
-    background-color: white;
-    border: none;
-    border: 2px solid #333;
-    border-radius: 4px;
-    height: 30px;
-    cursor: pointer;
+:root {
+    --btn-bg-start: #f8e8a0;
+    --btn-bg-end: #fff9d6;
+    --btn-border: #e6c75c;
+    --btn-color: #735c0f;
+    --btn-radius: 30px;
+    --btn-padding: 8px 24px;
+    --btn-font: 'Montserrat', sans-serif;
 }
 
+#erase,
 #shake {
-    background-color: white;
-    border: none;
-    border: 2px solid #333;
-    border-radius: 4px;
-    height: 30px;
+    position: relative;
+    display: inline-block;
+    padding: var(--btn-padding);
+    background: linear-gradient(135deg, var(--btn-bg-start), var(--btn-bg-end));
+    border: 2px solid var(--btn-border);
+    border-radius: var(--btn-radius);
+    font-family: var(--btn-font);
+    font-size: 16px;
+    color: var(--btn-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+    overflow: hidden;
+    transition: color 0.3s ease;
+}
+
+#erase::before,
+#shake::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, transparent 60%);
+    transform: rotate(45deg) scale(0);
+    opacity: 0;
+}
+
+#erase:hover,
+#shake:hover {
+    color: #b78f0b;
+}
+
+#erase:hover::before,
+#shake:hover::before {
+    transform: rotate(45deg) scale(1);
+    opacity: 1;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+#shake:focus {
+    animation: shakeButton 0.5s;
+}
+
+@keyframes shakeButton {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    20%,
+    60% {
+        transform: translateX(-4px);
+    }
+
+    40%,
+    80% {
+        transform: translateX(4px);
+    }
 }
 
 input[name="name-input"] {
@@ -129,15 +187,47 @@ input[name="name-input"] {
 }
 
 @keyframes shake {
-    0% { transform: translate(1px, 1px) rotate(20deg); }
-    10% { transform: translate(-1px, -2px) rotate(19deg); }
-    20% { transform: translate(-3px, 0px) rotate(21deg); }
-    30% { transform: translate(3px, 2px) rotate(20deg); }
-    40% { transform: translate(1px, -1px) rotate(90deg); }
-    50% { transform: translate(-1px, 2px) rotate(92deg); }
-    60% { transform: translate(-3px, 1px) rotate(87deg); }
-    70% { transform: translate(3px, 1px) rotate(19deg); }
-    80% { transform: translate(-1px, -1px) rotate(21deg); }
-    90% { transform: translate(1px, 2px) rotate(20deg); }
-    100% { transform: translate(1px, 1px) rotate(20deg); }
+    0% {
+        transform: translate(1px, 1px) rotate(20deg);
+    }
+
+    10% {
+        transform: translate(-1px, -2px) rotate(19deg);
+    }
+
+    20% {
+        transform: translate(-3px, 0px) rotate(21deg);
+    }
+
+    30% {
+        transform: translate(3px, 2px) rotate(20deg);
+    }
+
+    40% {
+        transform: translate(1px, -1px) rotate(90deg);
+    }
+
+    50% {
+        transform: translate(-1px, 2px) rotate(92deg);
+    }
+
+    60% {
+        transform: translate(-3px, 1px) rotate(87deg);
+    }
+
+    70% {
+        transform: translate(3px, 1px) rotate(19deg);
+    }
+
+    80% {
+        transform: translate(-1px, -1px) rotate(21deg);
+    }
+
+    90% {
+        transform: translate(1px, 2px) rotate(20deg);
+    }
+
+    100% {
+        transform: translate(1px, 1px) rotate(20deg);
+    }
 }

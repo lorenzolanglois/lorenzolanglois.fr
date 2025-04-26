@@ -3,7 +3,10 @@
 const bottle = document.getElementById("bottle");
 const bottleContainer = document.getElementById("bottle-container");
 const erase = document.getElementById("erase");
+const eraseAudio = document.getElementById("eraseAudio");
 const shake = document.getElementById("shake");
+const shakeAudio = document.getElementById("shakeAudio");
+const pop = document.getElementById("pop");
 const bubbles = document.getElementsByClassName("bubble");
 const input = document.getElementById("name-input");
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ ".split("");
@@ -32,11 +35,13 @@ function createBubble(letter) {
     bubble.style.setProperty("--wiggle", wiggle);
 
     bubble.addEventListener("click", () => {
-	if (bubble.innerText === "") {
-		input.value += " ";
-	} else {
-        	input.value += bubble.innerText;
-	}
+        pop.currentTime = 0;
+        pop.play();
+        if (bubble.innerText === "") {
+            input.value += " ";
+        } else {
+            input.value += bubble.innerText;
+        }
         bubble.remove();
         createBubble(bubble.innerText);
     });
@@ -49,6 +54,8 @@ function sleep(ms) {
 }
 
 async function invertCase() {
+    shakeAudio.currentTime = 0;
+    shakeAudio.play();
     bottleContainer.animate([
         { transform: 'translate(0, 0) rotate(0deg)' },
         { transform: 'translate(-40px, 0) rotate(-20deg)' },
@@ -71,11 +78,14 @@ async function invertCase() {
                 bubbles[i].innerText = bubbles[i].innerText.toUpperCase();
             }
         }
-    };
+    }
+    erase.focus();
 }
 
 erase.addEventListener("click", () => {
+    eraseAudio.currentTime = 0;
+    eraseAudio.play();
     input.value = input.value.substring(0, input.value.length - 1)
 });
 
-shake.addEventListener("click", invertCase);
+// shake.addEventListener("click", invertCase);
