@@ -21,7 +21,7 @@ context.lineWidth = 5;
 context.lineCap = "round";
 context.strokeStyle = "yellow";
 
-document.documentElement.style.cursor = 'url("../assets/crayon.svg"), auto';
+document.documentElement.style.cursor = 'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbDpzcGFjZT0icHJlc2VydmUiIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiB3aWR0aD0iMzIiIGhlaWdodD0iMzIiPjxwYXRoIHRyYW5zZm9ybT0icm90YXRlKDkwLCA1MCwgNTApIiBkPSJNNjkgMTFoLTFMMTIgNjh2MWwxOSAxOWgxbDU2LTU3di0xTDY5IDExek05NyA5bC02LTZhMTAgMTAgMCAwIDAtMTQgMGwtNiA2djFsMTkgMTloMWw2LTZhMTAgMTAgMCAwIDAgMC0xNHpNMTAgNzAgMCA5OWwxIDEgMjgtMTBoMXYtMUwxMCA3MHoiLz48L3N2Zz4="), auto';
 
 imageDisplay.insertAdjacentHTML("afterend", '<img src="assets/spinner.svg" alt="Charge">');
 const loadingImageDisplay = document.querySelector("overlay img:last-child");
@@ -55,6 +55,7 @@ document.body.addEventListener("pointerdown", function (e) {
         document.getSelection().removeAllRanges();
         document.documentElement.style['-webkit-user-select'] = "none";
         document.documentElement.style.userSelect = "none";
+        document.getElementById("up").style.right = "100px";
     }
 });
 
@@ -73,9 +74,23 @@ document.body.addEventListener("pointermove", function (e) {
     context.moveTo(e.clientX, e.clientY + window.scrollY);
 });
 
+window.addEventListener("scroll", function () {
+    if (window.scrollY >= 500) {
+        document.getElementById("up").style.display = "block";
+    } else {
+        document.getElementById("up").style.display = "none";
+    }
+    if (eraser.style.display === "block") {
+        document.getElementById("up").style.right = "100px";
+    } else {
+        document.getElementById("up").style.right = "10px";
+    }
+});
+
 eraser.addEventListener("click", function () {
     eraser.style.display = "none";
     context.clearRect(0, 0, canvas.width, canvas.height);
+    document.getElementById("up").style.right = "10px";
 });
 
 eraser.addEventListener("pointerdown", function (e) {
@@ -83,9 +98,20 @@ eraser.addEventListener("pointerdown", function (e) {
     eraser.style.transform = "scale(1.05)";
 });
 
+
 eraser.addEventListener("pointerup", function () {
     eraser.style.transform = "scale(1)";
-})
+});
+
+document.getElementById("up").addEventListener("pointerdown", function (e) {
+    e.preventDefault();
+    document.getElementById("up").style.transform = "scale(1.05)";
+});
+
+document.getElementById("up").addEventListener("pointerup", function (e) {
+    e.preventDefault();
+    document.getElementById("up").style.transform = "scale(1)";
+});
 
 overlays.forEach(function(elem) {
     elem.addEventListener("click", function (e) {
