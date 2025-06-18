@@ -13,7 +13,7 @@ const allowedTags = new Set(["DIV", "BODY", "FORM"]);
 const languageNames = ["frFrançais", "enEnglish"];
 
 var isPainting = false;
-var lang = (window.location.href.split('/').pop() || "fr");
+var lang = (window.location.href.split('/').pop().split('#')[0] || "fr");
 
 canvas.width = window.innerWidth;
 canvas.height = document.body.clientHeight;
@@ -141,6 +141,7 @@ imageDisplay.addEventListener("load", function () {
 languageLinks.forEach(function(elem) {
     elem.addEventListener("click", function (e) {
         e.preventDefault();
+        console.log(window.location.href.split('/').pop().split('#')[0]);
         elem.innerHTML = languageNames.find(item => item.startsWith(lang)).slice(2);
         var oldLang = lang;
         lang = (e.target.href.split('/').pop() || "fr");
