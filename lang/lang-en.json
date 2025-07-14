@@ -2,7 +2,7 @@
     "text": {
         "welcome-to": "Welcome to ",
         "see-cv": "Go to the cv",
-        "student": "Fourth year student at Epitch Berlin",
+        "student": "Fifth year student at Epitch Paris",
         "some-projects": "Here's some projects I made...",
         "trailer": "Trailer",
         "group-3": "Group of 3",
@@ -51,7 +51,8 @@
         "jamclown-description1": "JamClown is a 3D game made for the Nintendo DS. The goal is to exclude the pinguin from the production chain and to make the maximum amount of points in the allotted time.",
         "jamclown-description2": "Use the libnds library to code on the Nintendo DS",
         "jamclown-description3": "The game logic and mechanics",
-        "jamclown-description4": "The 3D models and textures"
+        "jamclown-description4": "The 3D models and textures",
+        "contact-note": "This form/email can also be used to request the deletion of an Iceless account. If this is the case, specify it in the message with your username, and you will be promptly contacted (by doing so, the entirety of your data will be deleted)"
     },
     "alt": {
         "linkedin-logo": "LinkedIn logo",

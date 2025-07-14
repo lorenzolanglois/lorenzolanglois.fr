@@ -2,7 +2,7 @@
     "text": {
         "welcome-to": "Bienvenue sur ",
         "see-cv": "Voir le cv",
-        "student": "Étudiant de quatrième année à Epitech Berlin",
+        "student": "Étudiant de cinquième année à Epitech Paris",
         "some-projects": "Quelques projets réalisés...",
         "trailer": "Trailer",
         "group-3": "Groupe de 3",
@@ -23,7 +23,7 @@
         "credits": "Crédits",
         "website-made-by": "Site réalisé par Lorenzo Langlois",
         "the-contact-form-sends": "Le formulaire de contact envoie une requête vers l'api de ",
-        "the-svg-are-either": "Les svg sont soit libres de droits ou faits pour le site",
+        "the-svg-are-either": "Les svg sont soit libres de droits soit faits pour le site",
         "fonts": "Polices d'écritures",
         "the-gloria-hallelujah-font-is": "La police \"Gloria Hallelujah\" est conçue par Kimberly Geswein (© 2010, ",
         "and-is-under-this-license": " et est sous licence ",
@@ -51,7 +51,8 @@
         "jamclown-description1": "JamClown est un jeu 3D pour Nintendo DS. Il faut exclure le manchot de la chaîne de production et faire le maximum de point avant la fin du temps imparti.",
         "jamclown-description2": "D'utiliser la librarie libnds pour développer sur Nintendo DS",
         "jamclown-description3": "De faire la logique et les mécaniques du jeu",
-        "jamclown-description4": "Des modèles 3D et textures"
+        "jamclown-description4": "Des modèles 3D et textures",
+        "contact-note": "Ce formulaire/mail peut aussi être utilisé pour faire une demande de suppression de compte Iceless, si c'est le cas précisez-le dans le message avec votre nom d'utilisateur, vous serez rapidement recontacté (En faisant ça toutes les données vous concernant seront supprimées)"
     },
     "alt": {
         "linkedin-logo": "Logo de LinkedIn",

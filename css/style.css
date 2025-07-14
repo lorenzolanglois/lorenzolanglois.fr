@@ -68,6 +68,11 @@ iframe {
     display: none;
 }
 
+iframe.main {
+    display: block;
+    aspect-ratio: 16 / 9;
+}
+
 .project > img {
     height: 125px;
     margin: 55px 0;
@@ -330,7 +335,7 @@ label input, label textarea {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.description {
+.description, .note {
     font-size: 20px;
     margin: 0 80px;
     font-family: "Patrick Hand";
@@ -423,17 +428,12 @@ a img {
     cursor: pointer;
 }
 
-img {
+img, iframe {
     margin: 20px;
     z-index: 1;
 }
 
-video {
-    cursor: auto;
-    width: 60%;
-}
-
-img.main {
+.main {
     width: 60%;
 }
 
@@ -536,6 +536,10 @@ button.border:hover {
 @media (max-width:725px) {
     h1, h2, h3, p {
         text-align: center;
+    }
+
+    .main {
+        width: 80%;
     }
 
     .project > img {
