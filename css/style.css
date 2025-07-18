@@ -335,6 +335,12 @@ label input, label textarea {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+.info {
+    text-decoration: underline;
+    font-family: "Patrick Hand";
+    font-size: 25px;
+}
+
 .description, .note {
     font-size: 20px;
     margin: 0 80px;
