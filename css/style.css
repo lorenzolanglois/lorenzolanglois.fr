@@ -66,9 +66,10 @@ img {
 
 iframe {
     display: none;
+    position: absolute;
 }
 
-iframe.main {
+iframe.main, preview {
     display: block;
     aspect-ratio: 16 / 9;
 }
@@ -434,12 +435,33 @@ a img {
     cursor: pointer;
 }
 
-img, iframe {
+img, iframe, preview {
     margin: 20px;
     z-index: 1;
 }
 
+preview {
+    z-index: 200;
+}
+
+preview::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10%;
+    aspect-ratio: 1;
+    pointer-events: none;
+    background: var(--preview-icon, url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="white"><polygon points="16,12 52,32 16,52"/></svg>'));
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    opacity: 0.9;
+}
+
 .main {
+    background-size: contain;
     width: 60%;
 }
 
@@ -520,6 +542,24 @@ button.border:hover {
     color: white;
 }
 
+.previewfadeout {
+  animation: previewFadeOut 1s forwards;
+}
+
+@keyframes previewFadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
 
 @keyframes fasaBackground {
     0% {

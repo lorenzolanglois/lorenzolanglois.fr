@@ -30,6 +30,23 @@ Array.from(document.getElementsByTagName("video")).forEach(element => {
     element.poster = element.poster.replace("_small", "_thumbnail");
 });
 
+Array.from(document.getElementsByTagName("preview")).forEach(element => {
+    element.style.backgroundImage = "linear-gradient(rgba(219, 219, 219, 0.3), rgba(0, 0, 0, 0.5)), url('" + element.getAttribute("src") + "')";
+    element.addEventListener("mouseenter", function (e) {
+        const iframe = document.createElement("iframe");
+        iframe.className = "main";
+        iframe.src = "https://www.youtube-nocookie.com/embed/" + e.target.getAttribute("video");
+        iframe.title = "YouTube video player";
+        iframe.frameBorder = "0";
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        iframe.referrerPolicy = "strict-origin-when-cross-origin";
+        iframe.allowFullscreen = true;
+        e.target.parentElement.appendChild(iframe)
+        e.target.style.setProperty("--preview-icon", "url('')");
+        e.target.className = "main previewfadeout";
+    }, {once: true});
+});
+
 window.addEventListener("submit", function () {
     document.getElementById("contactForm").style.display = "none";
     document.getElementById("contactText").style.display = "block";
