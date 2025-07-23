@@ -1,5 +1,6 @@
 html, input, textarea {
     scroll-behavior: smooth;
+    overflow-x: hidden;
     font-family: "Gloria Hallelujah", Comic Sans MS, Comic Sans, cursive;
     font-weight: 500;
 }
@@ -25,7 +26,6 @@ body {
     width: 100%;
     box-sizing: border-box;
     margin: 0;
-    overflow-x: hidden;
 }
 
 h1, .h1 {
