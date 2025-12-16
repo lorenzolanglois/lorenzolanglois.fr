@@ -1,3 +1,7 @@
+html {
+    background-color: white;
+}
+
 html, input, textarea {
     scroll-behavior: smooth;
     overflow-x: hidden;
