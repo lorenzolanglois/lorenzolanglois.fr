@@ -291,6 +291,46 @@ label input, label textarea {
     margin-bottom: 30px;
 }
 
+.projects-tabs {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.projects-tabs button {
+    min-width: 140px;
+}
+
+.projects-tabs button.active {
+    background-color: black;
+    color: white;
+}
+
+.projects-panels {
+    width: 100%;
+}
+
+.tab-panel {
+    display: none;
+    width: 100%;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+.project-placeholder {
+    min-height: 220px;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.project-placeholder .title {
+    max-width: 700px;
+    padding: 0 12px;
+}
+
 .project p.title {
     font-size: 52px;
 }
@@ -511,6 +551,20 @@ button.border:hover {
     color: white;
 }
 
+#iceless {
+    box-sizing: border-box;
+    background: linear-gradient(0deg, #003eb0c8 0%, #145cd9c8 100%);
+}
+
+#iceless * {
+    color: white;
+}
+
+#icelessGallery img {
+    height: 300px;
+    width: auto;
+}
+
 #fasa {
     box-sizing: border-box;
     background: radial-gradient(circle, #935ffbc8 0%, #8d67e0c8 100%);
@@ -535,7 +589,7 @@ button.border:hover {
     top: 0;
     z-index: -100;
     border-radius: 50%;
-    animation: fasaBackground 13s steps(130) infinite alternate;
+    /* animation: fasaBackground 13s steps(130) infinite alternate; */ /* Utilise un peu trop de ressources */
 }
 
 #littleplant {
@@ -643,5 +697,15 @@ button.border:hover {
 
     .gallery a img, .gallery a {
         width: 80%;
+    }
+
+    .projects-tabs {
+        width: calc(100% - 16px);
+        justify-content: center;
+    }
+
+    .projects-tabs button {
+        min-width: 120px;
+        font-size: 18px;
     }
 }

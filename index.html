@@ -40,8 +40,7 @@
   <div class="flex-down">
     <p id="title">Lorenzo Langlois</p>
     <p class="info" data-translate="info">Actuellement en recherche de CDD/stage/CDI de fin d'étude à temps plein dès avril 2026</p>
-    <div class="flex-left social">
-      <!-- Faire CSS pour les images en mode collées sur un cahier -->
+    <div class="flex-left social"> <!-- Faire CSS pour les images en mode collées sur un cahier -->
       <a href="https://linkedin.com/in/lorenzo-langlois/" target="_blank"><img alt="Logo de LinkedIn" data-translate="linkedin-logo" title="LinkedIn" src="assets/social/linkedin.svg"></a>
       <a href="https://www.youtube.com/@lorenzo.langlois" target="_blank"><img alt="Logo de YouTube" data-translate="youtube-logo" title="YouTube" src="assets/social/youtube.svg"></a>
       <a href="https://github.com/lorenzolanglois/" target="_blank"><img alt="Logo de GitHub" data-translate="github-logo" title="GitHub" src="assets/social/github.svg"></a>
@@ -51,6 +50,12 @@
     <p data-translate="student">Étudiant de cinquième année à Epitech Paris</p>
   </div>
   <h2 id="projectsDone" data-translate="some-projects">Quelques projets réalisés...</h2>
+  <div class="projects-tabs" role="tablist" aria-label="Project categories">
+    <button type="button" class="border active" role="tab" aria-selected="true" data-tab-target="projects" data-translate="tab-projects">Projets</button>
+    <button type="button" class="border" role="tab" aria-selected="false" data-tab-target="games" data-translate="tab-games">Jeux</button>
+  </div>
+  <div class="projects-panels">
+    <div class="tab-panel" data-tab-panel="games">
   <div id="fasa" class="flex-down project">
     <img alt="Logo du jeu Project F.A.S.A." title="Project F.A.S.A." data-translate="project-fasa-logo" src="assets/fasa/fasa_logo.webp" />
     <p class="description" data-translate="project-fasa-description1">Project F.A.S.A. est un jeu de tir à la première personne. Le but est d'avancer dans le niveau jusqu'au boss final en tuant les différents ennemis.</p>
@@ -208,6 +213,45 @@
         </a>
       </div>
     </div>
+  </div>
+  </div>
+  <div class="tab-panel active" data-tab-panel="projects">
+    <div id="iceless" class="flex-down project">
+      <a href="https://iceless.app" target="_blank"><img alt="Logo de l'application Iceless" title="Iceless" data-translate="iceless-logo" style="height: 200px;" src="assets/iceless/iceless_logo.webp" /></a>
+      <p class="description" data-translate="iceless-description1">Iceless est une application de rencontre innovante qui brise la glace pour vous. Jouez à des mini-jeux vocaux amusants pour éviter les premiers échanges maladroits.</p>
+      <div class="flex-left category">
+        <div class="flex-down">
+          <img class="main" src="assets/iceless/iceless_screenshot1_thumbnail.webp" title="Screenshot d'Iceless" data-translate="iceless-screenshot"></img>
+        </div>
+        <div class="flex-down">
+          <p data-translate="group-3">Groupe de 3</p>
+          <p data-translate="2-years-of-work">2 ans de travail</p>
+          <p class="description strong" data-translate="on-this-project">Sur ce projet je me suis occupé :</p>
+          <li class="description" data-translate="iceless-description2">Du développement front-end avec React Native</li>
+          <li class="description" data-translate="iceless-description3">Du développement de mini-jeux 3D en JavaScript avec Three.js</li>
+          <li class="description" data-translate="iceless-description4">D'aider sur la partie IA avec Python et le modèle Ministral</li>
+          <li class="description" data-translate="iceless-description5">Du back-end REST API et de la base de données avec Node.js, Express.js et MySQL</li>
+        </div>
+      </div>
+      <div id="icelessGallery" class="flex-down">
+        <h3 data-translate="images">Images</h3>
+        <div class="flex-left gallery">
+          <a href="assets/iceless/iceless_screenshot1.webp" target="_blank">
+            <img alt="Screenshot d'Iceless montrant l'interface de l'application" data-translate="iceless-screenshot-1"
+            srcset="assets/iceless/iceless_screenshot1_small.webp 580w, assets/iceless/iceless_screenshot1.webp 1734w" sizes="1px" src="assets/iceless/iceless_screenshot1_small.webp">
+          </a>
+          <a href="assets/iceless/iceless_screenshot2.webp" target="_blank">
+            <img alt="Screenshot d'Iceless montrant une interaction en mini-jeu vocal" data-translate="iceless-screenshot-2"
+            srcset="assets/iceless/iceless_screenshot2_small.webp 580w, assets/iceless/iceless_screenshot2.webp 1734w" sizes="1px" src="assets/iceless/iceless_screenshot2_small.webp">
+          </a>
+          <a href="assets/iceless/iceless_screenshot3.webp" target="_blank">
+            <img alt="Screenshot d'Iceless montrant une interaction en mini-jeu vocal" data-translate="iceless-screenshot-2"
+            srcset="assets/iceless/iceless_screenshot3_small.webp 580w, assets/iceless/iceless_screenshot3.webp 1734w" sizes="1px" src="assets/iceless/iceless_screenshot3_small.webp">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
   </div>
   <h2 id="cv">CV</h2>
   <div class="flex-down gap">

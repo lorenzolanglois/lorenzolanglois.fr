@@ -8,6 +8,8 @@ const overlays = document.querySelectorAll("overlay");
 const galleryImages = document.querySelectorAll(".gallery a");
 const imageDisplay = document.querySelector("overlay img:first-child");
 const languageLinks = document.querySelectorAll("topbar a:not(:has(img))");
+const projectTabButtons = document.querySelectorAll(".projects-tabs [data-tab-target]");
+const projectTabPanels = document.querySelectorAll(".projects-panels [data-tab-panel]");
 const context = canvas.getContext("2d", { willReadFrequently: true });
 const allowedTags = new Set(["DIV", "BODY", "FORM"]);
 const languageNames = ["frFrançais", "enEnglish"];
@@ -52,20 +54,10 @@ Array.from(document.getElementsByTagName("preview")).forEach(element => {
 window.addEventListener("submit", function () {
     document.getElementById("contactForm").style.display = "none";
     document.getElementById("contactText").style.display = "block";
-    canvas.height = document.body.clientHeight;
+    resizeCanvas();
 });
 
-window.addEventListener("resize", function () {
-    if (window.innerHeight > canvas.height || window.innerWidth > canvas.width) {
-        const background = context.getImageData(0, 0, canvas.width, canvas.height)
-        canvas.width = window.innerWidth;
-        canvas.height = document.body.clientHeight;
-        context.putImageData(background, 0, 0)
-        context.lineWidth = 5;
-        context.lineCap = "round";
-        context.strokeStyle = "yellow";
-    }
-});
+window.addEventListener("resize", resizeCanvas);
 
 document.body.addEventListener("pointerdown", function (e) {
     if (allowedTags.has(e.target.tagName) && e.pointerType === "mouse") {
@@ -173,6 +165,36 @@ languageLinks.forEach(function(elem) {
     });
 });
 
+projectTabButtons.forEach(function(button) {
+    button.addEventListener("click", function () {
+        setActiveProjectsTab(button.getAttribute("data-tab-target"));
+    });
+});
+
+function setActiveProjectsTab(activeTab) {
+    projectTabButtons.forEach(function(button) {
+        const isActive = button.getAttribute("data-tab-target") === activeTab;
+        button.classList.toggle("active", isActive);
+        button.setAttribute("aria-selected", isActive ? "true" : "false");
+    });
+
+    projectTabPanels.forEach(function(panel) {
+        const isActive = panel.getAttribute("data-tab-panel") === activeTab;
+        panel.classList.toggle("active", isActive);
+    });
+    resizeCanvas();
+}
+
+function resizeCanvas() {
+    const background = context.getImageData(0, 0, canvas.width, canvas.height);
+    canvas.width = window.innerWidth;
+    canvas.height = document.body.clientHeight;
+    context.putImageData(background, 0, 0);
+    context.lineWidth = 5;
+    context.lineCap = "round";
+    context.strokeStyle = "yellow";
+}
+
 function changeLanguage(_lang) {
     fetch("lang/lang-" + _lang + ".json")
         .then(response => response.json())
@@ -203,5 +225,6 @@ function changeLanguage(_lang) {
             });
             document.documentElement.lang = _lang;
             document.title = "Lorenzo Langlois - " + data.text["developer"];
+            canvas.height = document.body.clientHeight;
         });
 }

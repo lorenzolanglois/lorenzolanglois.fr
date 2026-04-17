@@ -50,6 +50,12 @@
     <p data-translate="student">Fifth year student at Epitch Paris</p>
   </div>
   <h2 id="projectsDone" data-translate="some-projects">Here's some projects I made...</h2>
+  <div class="projects-tabs" role="tablist" aria-label="Project categories">
+    <button type="button" class="border active" role="tab" aria-selected="true" data-tab-target="projects" data-translate="tab-projects">Projects</button>
+    <button type="button" class="border" role="tab" aria-selected="false" data-tab-target="games" data-translate="tab-games">Games</button>
+  </div>
+  <div class="projects-panels">
+    <div class="tab-panel" data-tab-panel="games">
   <div id="fasa" class="flex-down project">
     <img alt="Project F.A.S.A. game logo" title="Project F.A.S.A." data-translate="project-fasa-logo" src="assets/fasa/fasa_logo.webp" />
     <p class="description" data-translate="project-fasa-description1">Project F.A.S.A. is a first person shooter. The goal is to walk through the level until the final boss while killing different ennemies.</p>
@@ -205,6 +211,45 @@
           <img alt="JamClown screenshot showing an industrial production chain set in a circus tent, there is a pinguin next to two canons" data-translate="jamclown-screenshot-1"
           srcset="assets/jamclown/jamclown_screenshot1_small.webp 580w, assets/jamclown/jamclown_screenshot1.webp 1734w" sizes="1px" src="assets/jamclown/jamclown_screenshot1_small.webp">
         </a>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="tab-panel active" data-tab-panel="projects">
+      <div id="iceless" class="flex-down project">
+        <a href="https://iceless.app" target="_blank"><img alt="Iceless logo" title="Iceless" data-translate="iceless-logo" style="height: 200px;" src="assets/iceless/iceless_logo.webp" /></a>
+        <p class="description" data-translate="iceless-description1">Iceless is an innovative dating app that breaks the ice for you! Play fun mini-games with people using vocal chat to avoid akward first steps.</p>
+        <div class="flex-left category">
+          <div class="flex-down">
+            <img class="main" src="assets/iceless/iceless_screenshot1_thumbnail.webp" title="Iceless screenshot" data-translate="iceless-screenshot"></img>
+          </div>
+          <div class="flex-down">
+            <p data-translate="group-3">Group of 3</p>
+            <p data-translate="2-years-of-work">2 years of work</p>
+            <p class="description strong" data-translate="on-this-project">On this project, I did:</p>
+            <li class="description" data-translate="iceless-description2">Front end developement using React Native</li>
+            <li class="description" data-translate="iceless-description3">3D video games using JavaScript with Three.js</li>
+            <li class="description" data-translate="iceless-description4">Help on the AI part using Python and Ministral model</li>
+            <li class="description" data-translate="iceless-description5">Back end REST API and database using Node.js, Express.js and MySQL</li>
+          </div>
+        </div>
+        <div id="icelessGallery" class="flex-down">
+          <h3 data-translate="images">Images</h3>
+          <div class="flex-left gallery">
+            <a href="assets/iceless/iceless_screenshot1.webp" target="_blank">
+              <img alt="Iceless screenshot showing a character with a rocket behind them" data-translate="iceless-screenshot-1"
+              srcset="assets/iceless/iceless_screenshot1_small.webp 580w, assets/iceless/iceless_screenshot1.webp 1734w" sizes="1px" src="assets/iceless/iceless_screenshot1_small.webp">
+            </a>
+            <a href="assets/iceless/iceless_screenshot2.webp" target="_blank">
+              <img alt="Iceless screenshot showing an open book witht the Wikipedia article to find" data-translate="iceless-screenshot-2"
+              srcset="assets/iceless/iceless_screenshot2_small.webp 580w, assets/iceless/iceless_screenshot2.webp 1734w" sizes="1px" src="assets/iceless/iceless_screenshot2_small.webp">
+            </a>
+            <a href="assets/iceless/iceless_screenshot3.webp" target="_blank">
+              <img alt="Iceless screenshot showing an open book witht the Wikipedia article to find" data-translate="iceless-screenshot-2"
+              srcset="assets/iceless/iceless_screenshot3_small.webp 580w, assets/iceless/iceless_screenshot3.webp 1734w" sizes="1px" src="assets/iceless/iceless_screenshot3_small.webp">
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
