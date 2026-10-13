@@ -225,6 +225,6 @@ function changeLanguage(_lang) {
             });
             document.documentElement.lang = _lang;
             document.title = "Lorenzo Langlois - " + data.text["developer"];
-            canvas.height = document.body.clientHeight;
+            resizeCanvas();
         });
 }
